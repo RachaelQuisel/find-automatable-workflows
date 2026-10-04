@@ -119,6 +119,7 @@ Raw traces remain outside this package in the original planning workspace under 
 
 ## Remaining review
 
+- Confirm ownership or redistribution permission for the three adapted source skills before describing their reuse rights as settled.
 - User review of the fictional specification's usefulness remains pending.
 - The exact live GitHub scan scope remains pending. No live workflow source was reviewed for these tests.
 - Cowork and claude.ai installation remain unverified. Live connections, live denial behavior, permanent installation, and Claude Directory publication remain unverified. The GitHub source repository is public.

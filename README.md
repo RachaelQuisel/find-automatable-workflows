@@ -90,4 +90,4 @@ This public repository contains the complete plugin. It adapts the user's suppli
 
 Those local documentation skills are not required to use the plugin. Their private logging settings are not included. Eval Creation retains its [Hamel Husain references](skills/eval-creation/references/hamel-husain-evaluation-practices.md).
 
-The supplied skills declare no redistribution license. No public license or marketplace release has been selected. This package does not grant rights to third-party material.
+This repository has an MIT license for Rachael Quisel's original contributions. The supplied source skills did not declare redistribution licenses when adapted, and permission for those adaptations has not yet been confirmed. Do not assume the MIT license grants rights to material owned by someone else. Claude Directory publication remains unverified.
