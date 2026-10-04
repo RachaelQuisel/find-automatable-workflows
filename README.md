@@ -86,7 +86,7 @@ Markdown is plain text with formatting marks, such as `#` for a heading. Ask to 
 
 ## Sources and attribution
 
-This private repository contains the complete plugin. It adapts the user's supplied `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills. The interview has been shortened for this plugin. The text follows the supplied `voice-align` writing rules. The explanation follows the supplied `auto` format.
+This public repository contains the complete plugin. It adapts the user's supplied `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills. The interview has been shortened for this plugin. The text follows the supplied `voice-align` writing rules. The explanation follows the supplied `auto` format.
 
 Those local documentation skills are not required to use the plugin. Their private logging settings are not included. Eval Creation retains its [Hamel Husain references](skills/eval-creation/references/hamel-husain-evaluation-practices.md).
 

@@ -4,7 +4,7 @@ The historical baseline was verified on October 3, 2026. It used version 0.1.0 i
 
 ## Repository and scope
 
-The user requested the private repository [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). This repository is the current source. The plugin is packaged at its root.
+The user originally requested a private repository for [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). The repository is now public. It is the current source, and the plugin is packaged at its root.
 
 The user selected Claude first, recommendations and specifications, manual scans, and GitHub as the initial source. The exact repository for a live scan remains pending. No live account content was scanned during plugin tests.
 
@@ -121,7 +121,7 @@ Raw traces remain outside this package in the original planning workspace under 
 
 - User review of the fictional specification's usefulness remains pending.
 - The exact live GitHub scan scope remains pending. No live workflow source was reviewed for these tests.
-- Cowork and claude.ai installation remain unverified. Live connections, live denial behavior, permanent installation, and public publication remain unverified.
+- Cowork and claude.ai installation remain unverified. Live connections, live denial behavior, permanent installation, and Claude Directory publication remain unverified. The GitHub source repository is public.
 - Execution of proposed automations is outside scope.
 - Reading instructions do not enforce permissions. Restricted test tools do not automatically restrict an installed plugin.
 
