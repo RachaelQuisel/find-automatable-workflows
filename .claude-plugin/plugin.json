@@ -1,16 +1,22 @@
 {
   "name": "find-automatable-workflows",
   "displayName": "Find Automatable Workflows",
-  "version": "0.1.1",
   "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
+  "version": "1.0.0",
   "author": {
     "name": "Rachael Quisel"
   },
+  "homepage": "https://github.com/RachaelQuisel/find-automatable-workflows",
+  "repository": "https://github.com/RachaelQuisel/find-automatable-workflows",
+  "license": "MIT",
   "keywords": [
     "automation",
     "workflow",
     "discovery",
     "requirements",
     "evaluation"
-  ]
+  ],
+  "icon": "./assets/find-automatable-workflows.png",
+  "documentationUrl": "https://github.com/RachaelQuisel/find-automatable-workflows#readme",
+  "supportUrl": "https://github.com/RachaelQuisel/find-automatable-workflows/issues"
 }

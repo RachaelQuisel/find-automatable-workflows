@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "find-automatable-workflows",
+  "description": "Find Automatable Workflows: a few questions that surface the work worth automating, then a specification you can hand off.",
+  "owner": {
+    "name": "Rachael Quisel"
+  },
+  "plugins": [
+    {
+      "name": "find-automatable-workflows",
+      "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/RachaelQuisel/find-automatable-workflows"
+    }
+  ]
+}
