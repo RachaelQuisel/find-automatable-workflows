@@ -2,6 +2,8 @@
 
 <img src="assets/find-automatable-workflows.png" alt="Find Automatable Workflows icon" width="160">
 
+This is the standalone source repository for **Find Automatable Workflows**.
+
 Find work worth automating. Start with a description of repetitive work or manually review selected GitHub repositories, Airtable bases, Slack conversations, and email threads. Then interview the user about a promising opportunity and turn their answers into an implementation-ready specification with outcome checks.
 
 Discovery runs when you ask. The plugin recommends automations; it does not build, deploy, schedule discovery, or activate the proposed routines.

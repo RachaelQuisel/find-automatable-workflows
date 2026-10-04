@@ -8,13 +8,13 @@ The user requested a dedicated GitHub repository: `RachaelQuisel/find-automatabl
 
 ## Scope
 
-The user selected Claude first, recommendations/specifications, manual scans only, and GitHub as the source. GitHub hosting for this workspace is the private repository `RachaelQuisel/plug-in-prd`, verified through repository metadata. The exact live scan repository remains pending; no live account content was scanned during these tests.
+The user selected Claude first, recommendations/specifications, manual scans only, and GitHub as the source. The current source of truth is the private repository [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). Initial implementation and test traces were created in the separate private planning repository `RachaelQuisel/plug-in-prd`; that location is historical. The exact live scan repository remains pending; no live account content was scanned during these tests.
 
 The plugin includes the requested three skills and optional source guidance for GitHub, Airtable, Slack, and email. It does not build proposed automations, run background discovery, or activate cloud routines.
 
-The initial behavioral evidence below was recorded under the former working name, Automation Scout (`automation-scout`). Its local trace folder retains that name so the original evidence stays identifiable. The user subsequently selected Workflow Automation Finder.
+Current name and namespace: **Find Automatable Workflows** (`find-automatable-workflows`). The historical behavioral evidence below was recorded under the earlier names Automation Scout and Workflow Automation Finder. Their paths and namespaces are preserved only to identify the original test runs.
 
-## Packaging and Host Evidence
+## Historical Packaging and Host Evidence
 
 - `claude plugin validate plugins/automation-scout --strict --json`: success, zero errors and warnings.
 - All three skills passed the Skill Creator frontmatter validator. Its PyYAML dependency was provided through the existing uv runtime after the system Python lacked it.
@@ -26,7 +26,7 @@ The initial behavioral evidence below was recorded under the former working name
 
 Detailed local traces are retained in `docs/evidence/automation-scout/` in the original private `RachaelQuisel/plug-in-prd` working repository, rather than bundled here. They contain fictional inputs and local environment paths and are retained as local QA artifacts. The public-facing package does not contain those traces.
 
-## Behavioral Results
+## Historical Behavioral Results
 
 The cases were performed by invoking the packaged skills in Claude Code, not by matching the source instructions against expected wording. The outputs and tool traces were inspected against the plan's nine required scenarios.
 
@@ -65,17 +65,21 @@ Two transient text-matching checks used an incorrect expected phrase during trac
 | `handoff.jsonl`, `handoff-output.md` | Specification/evaluation result and user-review copy |
 | `clean-load.jsonl`, `clean-load-revised.jsonl` | Original launcher context and corrected clean-directory session load |
 
-## Selected Name Verification
+## Historical Name Verification
 
-The user selected **Workflow Automation Finder** for small-business owners. The manifest display name, slug, package directory, README commands, and bundled handoff headings now use that name. Version remains 0.1.0. Strict validation of `plugins/workflow-automation-finder` returned zero errors and warnings. A fresh Claude Code session listed all three skills under the `workflow-automation-finder:` namespace and read the renamed manifest and Scout entry file successfully. Observed tool calls were Read only. The local trace is `name-load.jsonl` in the original evidence folder; this was a naming/load smoke check, not a repeat of the behavioral scenarios.
+During the earlier naming stage, the user selected **Workflow Automation Finder** for small-business owners. That stage used the former display name, slug, package directory, README commands, and handoff headings. Version remains 0.1.0. Strict validation of `plugins/workflow-automation-finder` returned zero errors and warnings. A fresh Claude Code session listed all three skills under the `workflow-automation-finder:` namespace and read the renamed manifest and Scout entry file successfully. Observed tool calls were Read only. The local trace is `name-load.jsonl` in the original evidence folder; this was a naming/load smoke check, not a repeat of the behavioral scenarios.
 
-## Final Name
+## Current Name and Loading
 
-The user requested **Find Automatable Workflows** and a push to the existing draft PR. The current slug, package directory, command examples, handoff headings, and icon filename use `find-automatable-workflows`. Strict validation of the renamed package returned zero errors and warnings; package resource links and the manifest values were checked. The initial optional host-loading check was blocked by an automatic permission-review timeout. A fresh restricted Claude Code session subsequently loaded the standalone repository under `find-automatable-workflows:`, registered all three bundled skills, and read its root manifest and Scout entry file. The session completed without errors; observed tool calls were Read only. The local trace is retained outside this repository as `find-automatable-workflows-standalone-load.jsonl`. The original timeout therefore does not leave current namespace loading unverified.
+The user selected **Find Automatable Workflows**, then requested its own repository. The old planning-repository draft PR is historical; this standalone repository is the current implementation. The current slug, package directory, command examples, handoff headings, and icon filename use `find-automatable-workflows`. Strict validation of the renamed package returned zero errors and warnings; package resource links and the manifest values were checked. The initial optional host-loading check was blocked by an automatic permission-review timeout. A fresh restricted Claude Code session subsequently loaded the standalone repository under `find-automatable-workflows:`, registered all three bundled skills, and read its root manifest and Scout entry file. The session completed without errors; observed tool calls were Read only. The local trace is retained outside this repository as `find-automatable-workflows-standalone-load.jsonl`. The original timeout therefore does not leave current namespace loading unverified.
 
 ## Icon
 
-Current icon: `assets/find-automatable-workflows.png`, created with the user-selected Soft Index Icons renderer. The revised mark makes workflow the primary symbol: one starting step branching into two next steps, drawn as rounded outline boxes with one dot and a top-right sparkle on a dusty mauve ground. The initial magnifier version was replaced after the user clarified that workflow is the keyword; its local copy is retained in `artifacts/workflow-automation-finder-icon/previous-magnifier.png`. The supplied geometry helpers, hand-wobble, Sheet API, paper grain, and squircle mask were reused unchanged; subject painting was omitted for outline-only linework. The PNG was visually inspected and checked as 1024 × 1024 RGBA with transparent corners and a feathered squircle boundary. After the user supplied the three-icon contact sheet, the mark was revised into a branching workflow and visually compared at the same scale beside those references. The exact supplied renderer matches the renderer used for the reference set; its geometry helpers, stroke setting, palette technique, and paper treatment were retained. The comparison is a local review artifact in `artifacts/workflow-automation-finder-icon/reference-comparison.png`; the user reference images are not bundled. This is a packaged asset and README preview; no marketplace upload was performed.
+Current icon: `assets/find-automatable-workflows.png`, created with the user-selected Soft Index Icons renderer. The revised mark makes workflow the primary symbol: one starting step branching into two next steps, drawn as rounded outline boxes with one dot and a top-right sparkle on a dusty mauve ground. The initial magnifier version was replaced after the user clarified that workflow is the keyword; its local copy is retained in the original planning workspace at `artifacts/workflow-automation-finder-icon/previous-magnifier.png`. The supplied geometry helpers, hand-wobble, Sheet API, paper grain, and squircle mask were reused unchanged; subject painting was omitted for outline-only linework. The PNG was visually inspected and checked as 1024 × 1024 RGBA with transparent corners and a feathered squircle boundary. After the user supplied the three-icon contact sheet, the mark was revised into a branching workflow and visually compared at the same scale beside those references. The exact supplied renderer matches the renderer used for the reference set; its geometry helpers, stroke setting, palette technique, and paper treatment were retained. The comparison is retained in the original planning workspace at `artifacts/workflow-automation-finder-icon/reference-comparison.png`; the user reference images are not bundled. This is a packaged asset and README preview; no marketplace upload was performed.
+
+## Follow-up Regression Check
+
+After the self-audit, a fresh restricted Claude Code session loaded this standalone repository and used the description: “I copy our active orders into a Markdown report every Tuesday.” No accounts were connected, and discovery only was requested. The output contained one candidate, OPP-001, with both simplification and automation alternatives in that card. The launcher explicitly closed stdin with `< /dev/null`; the response contained only the intended workflow context. Observed tool calls were Read only. The raw local trace is retained in the original planning workspace as `docs/evidence/automation-scout/current-regression.jsonl`. This verifies the two corrected defects against the current package, without claiming a live integration test.
 
 ## Remaining Evidence and User Review
 
