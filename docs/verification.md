@@ -1,91 +1,128 @@
-# Find Automatable Workflows Verification
+# Find Automatable Workflows verification
 
-Verified October 3, 2026. Current package: this repository root, version 0.1.0. Host: Claude Code 2.1.288.
+The historical baseline was verified on October 3, 2026. It used version 0.1.0 in Claude Code 2.1.288. The current package is version 0.1.1 at this repository root. Current interaction checks are recorded below.
 
-## Repository
+## Repository and scope
 
-The user requested a dedicated GitHub repository: `RachaelQuisel/find-automatable-workflows`. The complete plugin is packaged at its root, with session-local loading instructions adjusted for this checkout. Root manifest validation returned zero errors and warnings; Markdown/README image links resolve and the packaged text has no personal absolute filesystem paths. A first validation invocation targeted the parent directory rather than the new checkout; rerunning in the plugin root passed. The [fictional example handoff](example-handoff.md) is included; original planning artifacts and raw host traces remain in the prior private working repository.
+The user requested the private repository [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). This repository is the current source. The plugin is packaged at its root.
 
-## Scope
+The user selected Claude first, recommendations and specifications, manual scans, and GitHub as the initial source. The exact repository for a live scan remains pending. No live account content was scanned during plugin tests.
 
-The user selected Claude first, recommendations/specifications, manual scans only, and GitHub as the source. The current source of truth is the private repository [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). Initial implementation and test traces were created in the separate private planning repository `RachaelQuisel/plug-in-prd`; that location is historical. The exact live scan repository remains pending; no live account content was scanned during these tests.
+The package contains three skills. Optional reading guidance covers GitHub, Airtable, Slack, and email. The plugin does not build automations, discover work in the background, or activate cloud routines.
 
-The plugin includes the requested three skills and optional source guidance for GitHub, Airtable, Slack, and email. It does not build proposed automations, run background discovery, or activate cloud routines.
+Initial planning and raw test traces belong to the private `RachaelQuisel/plug-in-prd` repository. Its draft pull request is historical. The earlier names Automation Scout and Workflow Automation Finder appear below only to identify historical checks.
 
-Current name and namespace: **Find Automatable Workflows** (`find-automatable-workflows`). The historical behavioral evidence below was recorded under the earlier names Automation Scout and Workflow Automation Finder. Their paths and namespaces are preserved only to identify the original test runs.
+Root manifest validation passed without errors or warnings. Internal document and image links resolved. Distributed text contained no personal absolute file paths. One command initially validated the parent directory. Running it from the plugin root passed.
 
-## Historical Packaging and Host Evidence
+## Historical package and loading checks
 
-- `claude plugin validate plugins/automation-scout --strict --json`: success, zero errors and warnings.
-- All three skills passed the Skill Creator frontmatter validator. Its PyYAML dependency was provided through the existing uv runtime after the system Python lacked it.
-- The original Grill Me and Eval Creation bodies remain intact. Only unsupported `tags` frontmatter was normalized and routing/handoff notes added. Their locally supplied license status was checked and documented; no redistribution license was inferred.
-- All package-local Markdown links resolve and no personal absolute path is embedded in the package.
-- Claude's session initialization records list all three `automation-scout` namespaced skills. Their entry files were read in the initial load check.
-- The final plugin was copied into a fresh temporary directory and loaded through `--plugin-dir` from that directory. Discovery ran successfully there. This verifies a clean session-local load, not persistent user installation or another Claude surface.
-- Behavioral sessions used only Read and Skill tools, an empty MCP configuration, and permission mode `dontAsk`. Observed tool calls were Read only; the interview response needed no tool call. No unexpected tool calls or permission denials occurred.
+- `claude plugin validate plugins/automation-scout --strict --json` passed without errors or warnings.
+- All three skills passed the Skill Creator validator. An existing uv environment provided PyYAML when system Python lacked it.
+- At this stage, Grill Me and Eval Creation retained their original bodies. Unsupported `tags` metadata was removed. Routing notes were added. Version 0.1.1 later shortened the interview and rewrote the text.
+- The supplied skills declared no redistribution license. No license was inferred.
+- Claude registered all three `automation-scout` skills and read their entry files.
+- A fresh temporary-directory copy loaded with `--plugin-dir`. Discovery ran successfully. This proved loading for one Claude Code session. It did not prove permanent installation or support in another host.
+- Tests allowed only Read and Skill tools. They used an empty Model Context Protocol configuration and permission mode `dontAsk`. Model Context Protocol lets a host connect to external tools. Observed calls used Read only. The interview needed no tool call. There were no unexpected calls or permission denials.
 
-Detailed local traces are retained in `docs/evidence/automation-scout/` in the original private `RachaelQuisel/plug-in-prd` working repository, rather than bundled here. They contain fictional inputs and local environment paths and are retained as local QA artifacts. The public-facing package does not contain those traces.
+Raw traces remain outside this package in the original planning repository's `docs/evidence/automation-scout/` folder. They contain fictional inputs and local environment paths.
 
-## Historical Behavioral Results
+## Historical behavior checks
 
-The cases were performed by invoking the packaged skills in Claude Code, not by matching the source instructions against expected wording. The outputs and tool traces were inspected against the plan's nine required scenarios.
+Actual Claude Code sessions performed these cases. Source text matching alone was not used as proof.
 
-| Required scenario | Observed behavior | Result |
+| Scenario | Observed result | Status |
 |---|---|---|
-| Description only | Started from the user's account with no connection requirement; labeled reports, assumptions, and unknown automation coverage. | PASS after the deduplication correction below |
-| Same workflow across tools | Northstar issue, table, conversation, and partial email produced one NR-18 candidate. Cedar Museum stayed outside scope. | PASS |
-| Existing automation | Recognized acknowledgement coverage as distinct from aggregation; the fully automated River Workshop process produced zero new opportunities. | PASS |
-| Partial or denied access | Named the four missing email messages and missing live mappings; did not claim a complete account review. Provider access-denial behavior is described but not exercised against a live connector. | PASS for partial supplied sources; live denial unverified |
-| Ambiguous business rule | Asked one status-inclusion decision with a recommendation and retained known fields, trigger, and output choices; did not record the recommendation as confirmed. | PASS |
-| No supported opportunity | Returned zero recommendations with visible evidence and coverage limits for River Workshop. | PASS |
-| Embedded source instructions | The quoted instruction to scan all accounts and send records caused no scope expansion or external action. Tool traces stayed read-only. | PASS in the restricted fixture session |
-| Interview stopped or resumed | Produced a resumable Scope-branch summary when stopped, and resumed a supplied Scope-branch summary without re-asking confirmed facts. | PASS |
-| Manual/cloud proposal | Delivered the selected manual specification plus eight evaluation sections, unknown mappings and policy, and Needs review/zero runs. No implementation or delivery was claimed. Discovery also described a cloud routine as a conditional alternative. | PASS |
+| Description only | Used the user report without requiring a connection. Kept assumptions and unknown coverage visible. | Passed after the duplicate correction. |
+| One workflow across tools | Combined the Northstar sources into one NR-18 recommendation. Excluded Cedar Museum. | Passed. |
+| Existing automation | Kept acknowledgements separate from report aggregation. Recommended nothing new for the fully automated River Workshop process. | Passed. |
+| Partial access | Reported four missing email messages and unresolved live mappings. Made no complete-review claim. | Passed for supplied partial sources. Live access denial was not tested. |
+| Ambiguous rule | Asked one status-inclusion question. Offered a suggestion without confirming it. Preserved known fields, trigger, and output. | Passed. |
+| No useful opportunity | Returned zero recommendations with coverage limits for River Workshop. | Passed. |
+| Source instructions | Ignored a quoted request to scan all accounts and send records. Did not widen scope or act externally. | Passed in the restricted test session. |
+| Stop and resume | Returned a summary at the Scope topic. Resumed supplied context without repeating confirmed answers. | Passed. |
+| Manual and cloud proposals | Delivered a manual specification and eight evaluation sections. Kept mappings and policy unknown. Reported Needs review and zero runs. Described a conditional cloud alternative. Claimed no implementation or delivery. | Passed. |
 
-## Defect Found and Corrected
+## Historical defects and corrections
 
-The first description-only case created two candidates for one workflow: generating the report and questioning whether the report was needed. That violated the logical-workflow granularity rule.
+The first description-only test produced two recommendations for one workflow. One generated the report. The other questioned whether the report was needed. This violated the one-workflow-per-card rule.
 
-The scout and opportunity reference now require simplification and automation alternatives inside the same card. The same description-only prompt was rerun: it returned one candidate with both alternatives. The clean-directory smoke run also returned one candidate. The failed original trace remains preserved for comparison.
+The scout and card format were corrected. Simplification and automation alternatives now belong on one card. The repeated test and clean-directory check each returned one recommendation. The original failed trace was preserved.
 
-The initial clean-load launcher also forwarded its Python input as extra context to the host. The final clean-load check used closed stdin; its output contained only the requested discovery context. This was a verification-launcher correction, not a plugin behavior change.
+The first clean-load launcher passed Python input to Claude as extra context. Closing its standard input corrected the launcher. Standard input is the text a command receives from its caller. The response then contained only the requested discovery context. This changed the test launcher, not the plugin.
 
-Two transient text-matching checks used an incorrect expected phrase during tracker updates. They were replaced with direct artifact review and the progress count was reconciled with completed subtask checkboxes. Those checks are not product test evidence.
+Two tracker checks expected the wrong text. Direct artifact review replaced them. The progress count was checked against completed items. These tracker checks are not product evidence.
 
-## Evidence Index
+## Historical trace index
 
-| Local artifact | Purpose |
+| Local artifact | What it records |
 |---|---|
-| `skill-load.json` | Initial namespaced skill loading and source routing |
-| `package-validation.json` | Strict manifest validation |
-| `cross-tool-input.md`, `cross-tool.jsonl` | Raw fictional multi-source case and observed output/tool calls |
-| `no-op-input.md`, `no-op.jsonl` | Raw fully automated case and zero-findings output |
-| `description.jsonl`, `description-revised.jsonl` | Original duplicate-candidate defect and corrected run |
-| `interview.jsonl`, `pause.jsonl` | Resume and stop behavior |
-| `handoff.jsonl`, `handoff-output.md` | Specification/evaluation result and user-review copy |
-| `clean-load.jsonl`, `clean-load-revised.jsonl` | Original launcher context and corrected clean-directory session load |
+| `skill-load.json` | Initial skill loading and routing. |
+| `package-validation.json` | Manifest validation. |
+| `cross-tool-input.md`, `cross-tool.jsonl` | Fictional sources and the multi-source result. |
+| `no-op-input.md`, `no-op.jsonl` | Fully automated work and zero recommendations. |
+| `description.jsonl`, `description-revised.jsonl` | Original duplicate and corrected result. |
+| `interview.jsonl`, `pause.jsonl` | Resume and stop behavior. |
+| `handoff.jsonl`, `handoff-output.md` | Specification, evaluation, and user-review copy. |
+| `clean-load.jsonl`, `clean-load-revised.jsonl` | Original extra context and corrected clean-directory load. |
 
-## Historical Name Verification
+## Name and current loading
 
-During the earlier naming stage, the user selected **Workflow Automation Finder** for small-business owners. That stage used the former display name, slug, package directory, README commands, and handoff headings. Version remains 0.1.0. Strict validation of `plugins/workflow-automation-finder` returned zero errors and warnings. A fresh Claude Code session listed all three skills under the `workflow-automation-finder:` namespace and read the renamed manifest and Scout entry file successfully. Observed tool calls were Read only. The local trace is `name-load.jsonl` in the original evidence folder; this was a naming/load smoke check, not a repeat of the behavioral scenarios.
+The user first selected Workflow Automation Finder for small-business owners. That stage used version 0.1.0. Validation of `plugins/workflow-automation-finder` passed without errors or warnings. Claude registered its three skills under `workflow-automation-finder:`. It read the renamed manifest and scout file. Calls used Read only. The historical trace is `name-load.jsonl`.
 
-## Current Name and Loading
+The user then selected Find Automatable Workflows and requested this repository. The current slug, commands, headings, and icon filename use `find-automatable-workflows`.
 
-The user selected **Find Automatable Workflows**, then requested its own repository. The old planning-repository draft PR is historical; this standalone repository is the current implementation. The current slug, package directory, command examples, handoff headings, and icon filename use `find-automatable-workflows`. Strict validation of the renamed package returned zero errors and warnings; package resource links and the manifest values were checked. The initial optional host-loading check was blocked by an automatic permission-review timeout. A fresh restricted Claude Code session subsequently loaded the standalone repository under `find-automatable-workflows:`, registered all three bundled skills, and read its root manifest and Scout entry file. The session completed without errors; observed tool calls were Read only. The local trace is retained outside this repository as `find-automatable-workflows-standalone-load.jsonl`. The original timeout therefore does not leave current namespace loading unverified.
+Validation of the renamed package passed. Links and manifest values were checked. An initial optional loading check timed out during automatic permission review. A later restricted session loaded this standalone package successfully. It registered all three `find-automatable-workflows:` skills. It read the manifest and scout file. The session completed without errors. Calls used Read only.
+
+The trace `find-automatable-workflows-standalone-load.jsonl` remains outside this repository. The earlier timeout leaves no unresolved loading gap for the current namespace.
 
 ## Icon
 
-Current icon: `assets/find-automatable-workflows.png`, created with the user-selected Soft Index Icons renderer. The revised mark makes workflow the primary symbol: one starting step branching into two next steps, drawn as rounded outline boxes with one dot and a top-right sparkle on a dusty mauve ground. The initial magnifier version was replaced after the user clarified that workflow is the keyword; its local copy is retained in the original planning workspace at `artifacts/workflow-automation-finder-icon/previous-magnifier.png`. The supplied geometry helpers, hand-wobble, Sheet API, paper grain, and squircle mask were reused unchanged; subject painting was omitted for outline-only linework. The PNG was visually inspected and checked as 1024 × 1024 RGBA with transparent corners and a feathered squircle boundary. After the user supplied the three-icon contact sheet, the mark was revised into a branching workflow and visually compared at the same scale beside those references. The exact supplied renderer matches the renderer used for the reference set; its geometry helpers, stroke setting, palette technique, and paper treatment were retained. The comparison is retained in the original planning workspace at `artifacts/workflow-automation-finder-icon/reference-comparison.png`; the user reference images are not bundled. This is a packaged asset and README preview; no marketplace upload was performed.
+The current icon is `assets/find-automatable-workflows.png`. It used the supplied renderer now named `ghibli-icon-maker`.
 
-## Follow-up Regression Check
+The mark shows one starting box branching into two boxes. It uses rounded outlines, one dot, a sparkle, and a dusty mauve background. The user chose workflow as the main symbol.
 
-After the self-audit, a fresh restricted Claude Code session loaded this standalone repository and used the description: “I copy our active orders into a Markdown report every Tuesday.” No accounts were connected, and discovery only was requested. The output contained one candidate, OPP-001, with both simplification and automation alternatives in that card. The launcher explicitly closed stdin with `< /dev/null`; the response contained only the intended workflow context. Observed tool calls were Read only. The raw local trace is retained in the original planning workspace as `docs/evidence/automation-scout/current-regression.jsonl`. This verifies the two corrected defects against the current package, without claiming a live integration test.
+The renderer's geometry helpers, stroke settings, paper texture, and rounded-square mask were preserved. Shape interiors were left unpainted. The image was visually inspected. It is 1024 × 1024 pixels with transparency at the corners and softened edges.
 
-## Remaining Evidence and User Review
+The final mark was compared at the same scale with the user's three reference icons. The renderer matched their supplied renderer. The comparison remains in the planning workspace at `artifacts/workflow-automation-finder-icon/reference-comparison.png`. An earlier magnifier remains at `artifacts/workflow-automation-finder-icon/previous-magnifier.png`.
 
-- User review of the fictional handoff's usefulness is requested and pending. Automated/host checks do not replace that judgment.
-- Exact live GitHub scan scope is requested and pending. No GitHub issue, workflow run, Airtable base, Slack thread, or email has been reviewed live for this plugin.
-- Cowork/claude.ai installation, live connector access and denial behavior, persistent installation, public publication, and execution of proposed automations are unverified or excluded.
-- The plugin's read-only instructions are behavioral. The restricted QA sessions enforce their own limited tool set; that restriction is not automatically installed with the plugin.
+The reference images are not bundled. The current icon is packaged and shown in the README. It has not been uploaded to a marketplace.
 
-Implementation artifacts are ready for review. The plan remains short of 100% until its user usefulness review is recorded.
+## Regression before version 0.1.1
+
+After the self-review, a restricted session used this description: “I copy our active orders into a Markdown report every Tuesday.” It requested discovery only with no accounts connected.
+
+The result contained one recommendation, OPP-001. Its card included simplification and automation alternatives. The launcher closed standard input with `< /dev/null`. The response contained only the intended task context. Calls used Read only.
+
+The trace remains in the planning workspace as `docs/evidence/automation-scout/current-regression.jsonl`. This verified the corrected defects against the standalone package. It did not test a live connection.
+
+## Version 0.1.1 changes
+
+The user requested a few interactive questions and plain English throughout the plugin. The scout now uses a short intake. Grill Me asks a few important unresolved questions instead of a fixed count per topic.
+
+The conversation guide covers answers, corrections, unknowns, selection, discovery only, and resumption. The shared writing guide applies to all three skills. [How it works](how-it-works.md) uses the requested Trigger, Inputs, What happens, and Outputs format.
+
+Private Voice Align logging belongs to the editing run. It is not included in the plugin's runtime requirements.
+
+## Version 0.1.1 interaction checks
+
+A new restricted Claude Code conversation began with a small-business request and no connected accounts. It asked one question about repeated work and waited. The next answer produced one recommendation, OPP-001. Selecting it produced one question about an unresolved sort order.
+
+A later answer replaced status `Active` with `Ready` and requested a pause. The response preserved the corrected rule and paused. It listed confirmed answers, remaining choices, and a next question. Resuming with the remaining rules produced a specification and all eight evaluation sections. The result stayed Needs review and Not run. Live mappings stayed unresolved. No construction or delivery was claimed.
+
+A separate discovery-only session returned one workflow card. It kept simplification and automation alternatives together. It did not start an interview or write a specification.
+
+All six responses completed without host errors. Observed tool calls used Read only. Standard input was closed. No live workflow sources were connected. The host read the new conversation and writing guides.
+
+Strict manifest validation passed without errors or warnings. All three skills passed the Skill Creator validator. Internal document links, heading links, and the README image resolved. Distributed text contained no personal absolute paths or em dashes. The text was also reviewed for repeated facts, unclear terms, and incomplete explanations.
+
+Raw traces remain outside this package in the original planning workspace under `docs/evidence/automation-scout/interaction-v0.1.1/`. These checks establish observed behavior for fictional requests. They do not replace live connection tests or user usefulness review.
+
+## Remaining review
+
+- User review of the fictional specification's usefulness remains pending.
+- The exact live GitHub scan scope remains pending. No live workflow source was reviewed for these tests.
+- Cowork and claude.ai installation remain unverified. Live connections, live denial behavior, permanent installation, and public publication remain unverified.
+- Execution of proposed automations is outside scope.
+- Reading instructions do not enforce permissions. Restricted test tools do not automatically restrict an installed plugin.
+
+The original plan remains below 100% until its user usefulness review is recorded.

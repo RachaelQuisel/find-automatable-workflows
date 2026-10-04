@@ -1,12 +1,12 @@
 # Hamel Husain evaluation practices
 
-Use these source-backed principles when explaining or adapting the skill:
+Use these principles when explaining or adapting the skill. The primary references below support them.
 
 - Begin with manual review of real examples and observed failures. Do not begin with imagined problems or elaborate tools.
 - Check whether the user's goal was achieved before diagnosing individual steps.
 - Use focused pass-or-fail decisions. Split broad qualities into separate checks instead of using a one-to-five score.
-- Create automated checks only for important, repeated problems. Fix obvious problems directly, and prefer simple rule-based checks for exact facts.
-- Keep people responsible for the first review, the meaning of failure groups, and trusted answers. Compare an artificial intelligence reviewer with human decisions before relying on it.
+- Create automated checks only for important, repeated problems. Fix obvious problems directly. Prefer simple rules for checking exact facts.
+- Use people for the first review. Let them define failure groups and trusted answers. Compare an artificial intelligence reviewer with human decisions before relying on it.
 - Turn real failures into the smallest test cases that still reproduce the problem.
 
 Primary sources:

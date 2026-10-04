@@ -1,8 +1,16 @@
 {
   "name": "find-automatable-workflows",
   "displayName": "Find Automatable Workflows",
-  "version": "0.1.0",
-  "description": "Find evidence-backed automation opportunities, interview the user about selected workflows, and prepare specifications with outcome checks.",
-  "author": { "name": "Rachael Quisel" },
-  "keywords": ["automation", "workflow", "discovery", "requirements", "evaluation"]
+  "version": "0.1.1",
+  "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
+  "author": {
+    "name": "Rachael Quisel"
+  },
+  "keywords": [
+    "automation",
+    "workflow",
+    "discovery",
+    "requirements",
+    "evaluation"
+  ]
 }

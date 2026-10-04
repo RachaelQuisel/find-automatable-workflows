@@ -1,87 +1,85 @@
-# Selected Opportunity Handoff
+# Selected workflow specification
 
-Read this when carrying a selected candidate into Grill Me or producing its specification and evaluation. Use the conversation's existing answers and evidence. Do not require a new database, account connection, or saved file to continue.
+Use this when a user selects a recommendation or when writing its specification and evaluation. Use the conversation's existing answers and evidence. Continuing requires no new database, connection, or saved file.
 
-## Interview context and resumption
+## Interview and resumption
 
-Carry the candidate ID/title, workflow/audience, source scope and coverage, evidence locators, existing automation coverage, proposed approach, confirmed answers, and unresolved questions. Mark a suggested answer as proposed until the user selects it.
+Follow [the conversation guide](conversation-guide.md) and the bundled Grill Me skill. Carry forward the ID, title, goal, audience, source limits, evidence, existing automation coverage, confirmed answers, and open questions.
 
-Conduct the bundled Grill Me interview one question with a recommended answer at a time. Preserve its branch order and stopping rules. Read evidence before asking factual questions it can answer. If the user stops or a blocker needs offline resolution, return:
+A suggested answer stays proposed until the user chooses it. Ask only important unanswered questions. The default interview is short. It does not require a question count for each topic.
 
-- the candidate and goal;
-- confirmed decisions and their basis;
-- remaining questions and any offline blocker;
-- current branch;
-- next question and recommended answer.
-
-Resume from this summary rather than repeating the interview. The user's stop is not approval of unresolved choices.
+If the user pauses or stops, provide the selected workflow, confirmed decisions and their basis, unresolved choices, any offline blocker, current topic, and next question. Include a suggested answer when supported. Resume from there. Stopping does not approve unresolved choices.
 
 ## Specification fields
 
-Use a concise Markdown specification with these fields:
+1. **ID, title, goal, and audience.** Preserve the recommendation's identity and intended result.
+2. **Evidence and coverage.** Include minimal support and material access gaps. Separate observations, user reports, fictional examples, and inferences.
+3. **Current work and existing coverage.** Explain what would change and what existing automations handle.
+4. **Confirmed rules.** Record only user-selected rules or supplied authoritative rules. Separate suggestions and unresolved choices.
+5. **Inputs and identifiers.** Name the data needed and confirmed source mappings. A mapping identifies which source supplies a value. Mark unresolved fields, repositories, and accounts. Do not invent IDs.
+6. **Trigger and how it would run.** Describe the manual request, event, or cloud routine. State the required tools and connections. Nothing is activated.
+7. **Intended actions and outputs.** Name the reads, writes, and destinations proposed for the future automation. Record execution permission separately.
+8. **Dependencies and exceptions.** State missing connections or evidence, inclusion rules, exceptions, and user-selected stop and retry behavior. Leave unknown policies unresolved.
+9. **Evaluation.** Include Eval Creation's eight sections. Identify source comparisons and user judgments. A proposed check is not a completed run.
+10. **Remaining choices and status.** State what is ready and what must be resolved before construction. Do not call an unverified path runnable.
 
-1. **Candidate ID, title, goal, and audience.** Preserve the candidate's identity and intended outcome.
-2. **Evidence and coverage.** Include minimal source support and all material access gaps; distinguish observations, user reports, fictional examples, and inferences.
-3. **Current workflow and existing coverage.** Identify what changes and what existing automations already handle.
-4. **Confirmed decisions and business rules.** Record only user-selected rules or authoritative rules actually supplied. List proposals and unresolved choices separately.
-5. **Inputs and identifiers.** Name data roles, actual confirmed mappings when available, and unresolved field/repository/account mappings. Do not invent IDs.
-6. **Trigger and execution fit.** Explain a manual invocation, deterministic event, or asynchronous cloud routine, including runtime requirements. No routine activation is implied.
-7. **Permitted actions and outputs.** Describe exactly the intended reads/writes and destination. Record execution authorization separately; a recommendation does not grant permission to implement, send, or deploy.
-8. **Dependencies and exceptions.** State required connections, unavailable evidence, inclusion/exclusion behavior, and the user's selected stop/retry policy. Unknown policies remain unresolved.
-9. **Evaluation and completion evidence.** Attach Eval Creation's eight-section evaluation; identify source-of-truth comparisons and user judgments. A proposed evaluation is not a completed-run result.
-10. **Remaining choices and implementation status.** State whether the handoff is ready for construction or requires specific decisions/mappings first. Do not call an unverified execution path runnable.
-
-Deliver the specification and evaluation together in the conversation. Save a portable Markdown copy only if requested. Keep credentials, unrelated records, and full private archives out of the handoff.
+Deliver the specification and evaluation in the conversation. Save a Markdown copy only when requested. Exclude credentials, unrelated records, and complete private archives.
 
 ## Fictional clarified example
 
-This extends the [Acorn opportunity](opportunity-format.md#example-one-workflow-several-sources). The following answers are fictional example answers, not this user's business decisions.
+This extends the [Acorn recommendation](opportunity-format.md#example-one-workflow-across-several-sources). These are fictional answers. They are not this user's business rules.
 
-**OPP-001 — Prepare an open-case summary**
+**OPP-001: Prepare an open-case summary**
 
-- **Goal/audience:** Mira can request an accurate draft without manually copying case details.
-- **Evidence/coverage:** the supplied SUP-42 discussion, case schema, and Slack request support the draft-report job. Email is partial and real connector access is unverified. Existing acknowledgement automation covers a different job.
-- **Confirmed example answers:** include statuses `New` and `In progress`; include case ID, description, owner, classification tag, and last update; sort by case ID. Preserve source classification tags. Produce a Markdown draft in the current conversation. Do not send it to Slack or email. Missing required fields should be identified and left for Mira to resolve before the draft is considered complete. Zero qualifying cases produces an explicit empty report. No automatic rerun was requested.
-- **Inputs:** selected Support Cases table and the five report fields plus status. Exact live base/table/field mappings are not supplied and must be resolved before construction. These display names are fictional examples, not universal Airtable field names.
-- **Trigger/execution:** Mira manually requests the draft. A supported read connection supplies the selected records; this could later be implemented as a manual action. No cloud schedule is part of this example.
-- **Permitted output:** one draft in the conversation. Construction and external delivery have not been authorized.
-- **Exceptions/dependencies:** unavailable source data or unresolved mappings are explicit dependencies. Preserve the confirmed inclusion rule; do not substitute a different status. Identify incomplete cases without silently declaring the full draft complete.
-- **Implementation status:** proposed handoff; live mappings and connection remain unresolved. See the evaluation example below for how completion would be checked.
+- **Goal:** Mira can request an accurate draft without copying case details.
+- **Evidence:** SUP-42, the table structure, and the Slack request support the reporting task. Email is partial. Live connections are unverified. Acknowledgement automation serves a different purpose.
+- **Confirmed example rules:** Include statuses `New` and `In progress`. Include case ID, description, owner, classification tag, and last update. Sort by case ID. Preserve classification tags. Produce a Markdown draft in the conversation. Send nothing to Slack or email. Identify missing required fields. Mira must resolve them before the draft is complete. Report explicitly when zero cases qualify. No automatic rerun was requested.
+- **Inputs:** Use the selected Support Cases table, the five report fields, and status. Live base, table, and field mappings remain unknown. These display names are fictional.
+- **Trigger:** Mira requests a draft manually. A supported connection reads the selected records. No schedule is included.
+- **Output and permission:** Produce one draft in the conversation. Construction and external delivery have not been authorized.
+- **Exceptions:** Report unavailable data or unresolved mappings. Preserve the inclusion rule. Identify incomplete cases without declaring the whole draft complete.
+- **Status:** This is a proposed specification. Live mappings and a connection are still required.
 
 ## Evaluation for the fictional draft
 
 ### Purpose
 
-Produce a complete, correctly ordered draft of the cases Mira has chosen to include.
+Produce a complete draft of the cases Mira selected. Keep them in the correct order.
 
 ### Evidence reviewed
 
-Fictional Acorn source excerpts and the confirmed example answers above. No actual automation execution, live case set, or delivery evidence exists.
+The fictional Acorn sources and confirmed example answers support these checks. No actual run, live case set, or delivery evidence exists.
 
 ### What to check
 
-1. Does the draft contain exactly the source cases whose status is `New` or `In progress`, with no duplicates or excluded cases?
-2. Do the five displayed values match the selected source records, preserving classification tags and sorting by case ID?
-3. Are missing required fields or source access clearly reported, with the draft labeled incomplete when they prevent verification?
-4. Does a zero-case source produce an explicit empty report?
-5. Is the output limited to the requested draft, with no Slack/email send or source-record change?
+1. Does the draft contain exactly the cases with status `New` or `In progress`, without duplicates?
+2. Do the five displayed values match the source records?
+3. Are classification tags preserved and cases sorted by case ID?
+4. Are missing fields and source access reported? Is the draft labeled incomplete when they prevent verification?
+5. Does a zero-case source produce an explicit empty report?
+6. Did the process produce only the requested draft, without sending messages or changing source records?
 
 ### What success looks like
 
-All outcome checks pass against the selected source snapshot. Mira reviews the result's usefulness; that judgment is not replaced with an invented numeric score.
+All checks pass against the selected source snapshot. Mira decides whether the result is useful. No invented score replaces her judgment.
 
 ### When the work is done
 
-Every required source case and value is reconciled, no unsupported action occurred, and Mira has the requested draft. Unresolved mappings and missing evidence prevent an actual completion claim.
+Every required case and value matches the source. Mira has the requested draft. No extra action occurred. Missing mappings or evidence prevent an actual completion claim.
 
 ### When to stop
 
-Stop construction or evaluation that requires unavailable source access, unknown required mappings, or a change to Mira's confirmed business rules. Report the dependency instead of guessing.
+Stop construction or evaluation that needs unavailable source access or unknown required mappings. Stop if continuing would change Mira's confirmed rules. Report what is missing.
 
 ### What to do after a failed run
 
-Understand and correct the cause before another complete evaluation attempt. Eval Creation caps its evaluation workflow at ten complete attempts and stops sooner where continuing could create harm. This does not configure the proposed automation's operational retries; the fictional user requested no automatic rerun.
+Understand and correct the cause before another complete evaluation attempt. Eval Creation allows no more than ten complete attempts. Stop sooner when continuing could cause harm. This does not set retries for the proposed automation. The fictional user requested no automatic rerun.
 
 ### Final result
 
-Result: Needs review. Run number: not run; zero execution attempts. Completed work: specification and proposed evaluation. Unfinished work: live mappings, implementation, source reconciliation, and user review. Problems/first failed step: no run observed, so none established. Reason for stopping: this deliverable is a proposed handoff, not an executed workflow.
+- **Result:** Needs review.
+- **Run number:** Not run. There have been zero execution attempts.
+- **Completed work:** The specification and proposed evaluation are written.
+- **Unfinished work:** Live mappings, implementation, source comparisons, and user review remain.
+- **Problems and first failed step:** None are established because no run was observed.
+- **Reason for stopping:** The deliverable is a proposal. It has not been executed.

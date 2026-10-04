@@ -1,146 +1,123 @@
-# Fictional Claude Host Verification Output
+# Fictional specification and evaluation
 
-This is a generated example using fictional user answers, not a live client workflow.
+This example uses fictional answers from an earlier Claude Code check. It does not describe a live client workflow. Its wording has been shortened. The rules and unresolved choices remain.
 
-# OPP-007: Specification and evaluation
+## 1. ID, goal, and audience
 
-**Status:** Proposed handoff. Nothing has been built, run or authorized. Two things must be settled before construction: the live table and field mappings, and the read connection.
-
----
-
-## 1. Candidate, goal and audience
-
-- **Candidate:** OPP-007. The original card's title wasn't in the arguments, so this working title is only descriptive: *Prepare an active-order draft report*.
-- **Goal:** Lena stops copying order details by hand. She gets an accurate draft of the active orders.
+- **ID:** OPP-007.
+- **Title:** Prepare an active-order draft report. This is a working title. The original card title was not supplied.
+- **Goal:** Lena receives an accurate draft without copying order details.
 - **Audience:** Lena.
 
 ## 2. Evidence and coverage
 
-| Item | Type | Notes |
-|---|---|---|
-| Lena repeats the same exports every week | User report (fictional evidence) | No observed records, export files or counts support this. |
-| Business rules in section 4 | Confirmed by the user | Selected in the interview. |
-| Source records, schema, live data | **Not reviewed** | No read connection has been set up. |
-| Number of orders, time spent, how often errors happen | **Unknown** | Not estimated or invented. |
+- Lena reports repeated weekly exports. This is fictional user evidence. No records, files, or counts were inspected.
+- The rules below are confirmed fictional interview answers.
+- Live source data and table structure were not reviewed. The source tool is unknown.
+- Order counts, time spent, and error frequency are unknown.
 
-**Access gaps:** I did not inspect any live source, and I have not confirmed which tool the source table lives in.
+## 3. Current work and existing coverage
 
-## 3. Current workflow and existing coverage
+Lena reports exporting order data and copying details into a report each week. The proposed automation would read the selected records and produce a draft on request.
 
-- **Current workflow (as reported):** Every week, Lena exports order data and copies the relevant details into a report by hand.
-- **What changes:** When Lena asks, the system reads the source records and produces the draft. Lena no longer copies anything by hand.
-- **Existing automation coverage:** **Unknown.** No existing automations were checked for this handoff. That is not proof that none exist, and it should be checked before construction.
+Existing automation coverage is unknown. Check it before construction. Missing access does not prove no automation exists.
 
-## 4. Confirmed decisions and business rules
+## 4. Confirmed rules
 
-1. Include only orders whose status is exactly `Active`.
+1. Include only status `Active`.
 2. Sort by Order ID.
-3. Keep Priority exactly as recorded. Don't recalculate, reword or fill it in.
-4. Show these columns, in this order: **Order ID, Priority, Assignee, Due Date**.
-5. Lena starts it manually.
-6. The output is one Markdown draft in the conversation.
-7. Don't send anything to Slack or email, and don't edit any source records.
-8. If a required source field is missing, report it and label the draft **Incomplete**.
-9. If no orders qualify, produce an explicit empty report. Don't return blank output.
+3. Preserve Priority exactly as recorded. Do not calculate or replace it.
+4. Show **Order ID, Priority, Assignee, Due Date** in that order.
+5. Lena starts the process manually.
+6. Produce one Markdown draft in the conversation.
+7. Send nothing to Slack or email. Change no source records.
+8. If a required field is missing, name it and label the draft **Incomplete**.
+9. If no orders qualify, produce an explicit empty report.
 
-**Proposed, not confirmed:** none.
-
-**Unresolved:**
-- How to sort by Order ID: as text or as numbers. This matters if IDs look like `ORD-9` and `ORD-10`.
-- What format to show Due Date in.
-- Whether any operational retry policy is needed (see section 8).
+There are no unconfirmed suggestions. The sort type, Due Date format, and operational retry policy are unresolved.
 
 ## 5. Inputs and identifiers
 
-| Data role | Display name | Live mapping |
+| Data needed | Supplied display name | Live mapping |
 |---|---|---|
-| Source table | Orders (assumed role) | **Unresolved** |
-| Inclusion filter | Status | **Unresolved** |
-| Display / sort key | Order ID | **Unresolved** |
-| Display | Priority | **Unresolved** |
-| Display | Assignee | **Unresolved** |
-| Display | Due Date | **Unresolved** |
+| Source table | Orders is an assumed role. | Unresolved. |
+| Inclusion rule | Status | Unresolved. |
+| Display and sort value | Order ID | Unresolved. |
+| Display value | Priority | Unresolved. |
+| Display value | Assignee | Unresolved. |
+| Display value | Due Date | Unresolved. |
 
-These display names come from the confirmed rules. They are not verified field names or IDs, and I have not invented any.
+These names come from the confirmed rules. They are not verified source names or identifiers. A mapping identifies the actual source for each value.
 
-## 6. Trigger and execution fit
+## 6. Trigger and how it would run
 
-- **Trigger:** Lena asks for the draft by hand.
-- **Best fit:** A manually triggered action that reads the source, filters, sorts and builds the Markdown output. Each run is self-contained and deterministic.
-- **Runtime requirement:** A supported, read-only connection to the source table.
-- **Not included:** No schedule, cloud routine or event trigger. Nothing is activated.
+Lena requests the draft manually. A supported reading connection supplies the records. The process filters the records, sorts them, and builds the draft. No schedule or cloud routine is included.
 
-## 7. Permitted actions and outputs
+## 7. Intended actions and outputs
 
-- **Reads:** Only the Status, Order ID, Priority, Assignee and Due Date fields from the selected source table.
-- **Writes:** None.
-- **Output:** One Markdown draft in the current conversation.
-- **Not permitted:** Sending to Slack or email, editing records, or changing the schema.
-- **Execution authorization:** **Not granted.** Selecting OPP-007 and writing this handoff do not authorize building, running or deploying anything.
+- Read Status, Order ID, Priority, Assignee, and Due Date from the selected table.
+- Produce one Markdown draft in the conversation.
+- Send no messages. Change no records or table structure.
+
+Writing this specification does not authorize construction, execution, or deployment.
 
 ## 8. Dependencies and exceptions
 
-- **Required before construction:** The live table and field mappings, and a read connection.
-- **Inclusion:** Only status `Active` counts. Don't substitute or add other statuses.
-- **Missing required fields:** List the affected orders and fields, and label the draft **Incomplete**. Never present it as complete.
-- **No qualifying orders:** Produce an explicit empty report, such as "No orders with status Active."
-- **Source unavailable or mapping unknown:** Stop and report what is missing. Don't guess.
-- **Operational stop/retry policy:** **Unresolved.** The user hasn't chosen one, so none is assumed.
+- Resolve live table and field mappings. Confirm a reading connection.
+- Include only status `Active`.
+- List missing required fields and affected orders. Label the draft **Incomplete**.
+- When no orders qualify, say “No orders with status Active.”
+- Stop if the source is unavailable or a required mapping is unknown.
+- Leave the operational stop and retry policy unresolved until the user chooses it.
 
 ## 9. Evaluation
 
-### Active-order draft evaluation
+### Purpose
 
-**Purpose**
-Give Lena an accurate Markdown draft of every Active order, in Order ID order, without any manual copying.
+Give Lena an accurate Markdown draft of every Active order. Keep the rows in Order ID order.
 
-**Evidence reviewed**
-I reviewed Lena's report of repeated weekly exports (fictional evidence) and the business rules confirmed in the interview. No real source records, past exports, completed runs or failed runs were available. These checks therefore come from the confirmed rules, not from failures anyone has observed.
+### Evidence reviewed
 
-**What to check**
-1. Does the draft contain exactly the source orders with status `Active`, with no duplicates and no other statuses? *(Pass/Fail: compare with a source snapshot.)*
-2. Does each row show Order ID, Priority, Assignee and Due Date in that order, with values matching the source record? *(Pass/Fail: compare field by field.)*
-3. Does each Priority value exactly match the recorded value? *(Pass/Fail)*
-4. Are the rows sorted by Order ID? *(Pass/Fail. Text versus number sorting is still unresolved.)*
-5. If any required field is missing, does the draft name the affected orders and fields and carry the label **Incomplete**? *(Pass/Fail)*
-6. If no orders are Active, does the output say so explicitly? *(Pass/Fail)*
-7. Did the run produce only the one draft in the conversation, with no Slack or email send and no source edits? *(Pass/Fail)*
+The fictional report of weekly exports and confirmed interview rules support these checks. No real source records, exports, completed runs, or failed runs were available.
 
-**What success looks like**
-Every check passes against a snapshot of the source taken at the time of the run. Lena then reviews whether the draft is useful. That is her judgment, and no invented score replaces it.
+### What to check
 
-**When the work is done**
-The work is done when all checks pass, every Active order and its values match the source snapshot, nothing outside the permitted actions happened, and Lena has the draft. While the mappings and connection are unresolved, completion can't be claimed.
+1. Does the draft contain exactly the source orders with status `Active`, without duplicates?
+2. Does each row show Order ID, Priority, Assignee, and Due Date in that order?
+3. Do displayed values match the source? Is Priority preserved exactly?
+4. Are rows sorted by Order ID? Text or numeric sorting must be chosen before this can be checked.
+5. Does missing required data produce the affected orders and fields with the label **Incomplete**?
+6. Does an empty source produce an explicit empty report?
+7. Did the process create only the draft, without sending messages or changing records?
 
-**When to stop**
-Stop immediately in any of these cases:
-- The source can't be read.
-- A required field mapping is unknown.
-- Continuing would require changing Lena's confirmed rules.
-- Any step would send a message or edit a source record.
+### What success looks like
 
-Report the problem instead of guessing.
+Every check passes against the source snapshot taken for the run. Lena reviews usefulness. No invented score replaces her judgment.
 
-**What to do after a failed run**
-Find and fix the cause before trying another complete run. Don't repeat a failed action unless something has been corrected. This evaluation allows no more than 10 complete runs, and you should stop sooner if continuing could cause harm. If the tenth run fails, report what failed, what was finished, what remains and what help is needed. This limit applies to evaluating the process. It is not an operational retry policy for the automation, which is still unresolved.
+### When the work is done
 
-**Final result**
-- Result: Needs review
-- Run number: Not run (zero runs)
-- Completed work: The specification and the proposed evaluation
-- Unfinished work: Live mappings, read connection, Order ID sort type, Due Date format, operational retry policy, existing automation check, implementation, checking the output against the source, and Lena's review
-- Problems found: None observed. There is no run evidence, which is different from a failure.
-- First failed step: None
-- Reason for stopping: This is a proposed handoff, not a run.
+All required orders and values match the source. Lena has the draft. Every check passes. No extra action occurred. Unresolved mappings or missing access prevent a completion claim.
 
-## 10. Remaining choices and implementation status
+### When to stop
 
-**Not ready for construction.** Still needed:
-1. The live source table and field mappings
-2. A read-only connection to the source
-3. Whether Order IDs sort as text or as numbers
-4. The Due Date display format
-5. An operational retry or stop policy, or explicit confirmation that none is needed
-6. A check for existing automations that already cover this job
+Stop if the source cannot be read, a required mapping is unknown, or continuing would change Lena's rules. Stop if any step would send a message or change a source record. Report the problem.
 
-Nothing was built, run, sent or edited, and there is no evidence of a completed run.
+### What to do after a failed run
+
+Find and correct the cause before another complete attempt. Do not repeat an unchanged failed action. Evaluation allows at most ten complete attempts. Stop sooner when continuing could cause harm.
+
+After a tenth failed attempt, report the failure, completed work, remaining work, and help needed. This evaluation limit does not set the automation's retry policy.
+
+### Final result
+
+- **Result:** Needs review.
+- **Run number:** Not run. There have been zero runs.
+- **Completed work:** The specification and proposed evaluation are written.
+- **Unfinished work:** Resolve live mappings, the reading connection, sort type, Due Date format, and retry policy. Check existing automations. Complete implementation, source comparisons, and user review.
+- **Problems found:** None were observed. Missing run evidence is not an observed failure.
+- **First failed step:** None.
+- **Reason for stopping:** This is a proposed specification.
+
+## 10. Remaining choices and status
+
+Construction requires the dependencies and choices listed above. Nothing has been built, run, sent, or edited for this fictional workflow.

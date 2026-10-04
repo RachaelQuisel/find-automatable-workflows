@@ -1,49 +1,47 @@
-# Opportunity Cards
+# Opportunity cards
 
-Use this format for discovery results. Explain the work and the evidence before the proposed implementation. A description-only run may have user reports rather than observed system evidence; label them accurately.
+Use this format for recommendations. Describe the work and evidence before the proposed automation. Label a description as a user report when no source was inspected.
 
-## Start with coverage and the workflow
+## Source coverage and current work
 
-Record the selected project/accounts, sources actually inspected, activity window and configuration refs, pagination or truncation limits, missing access, and relevant existing automation coverage. A zero-findings result still includes coverage. Do not call a partial review complete.
+State the selected project and accounts, inspected sources, date window, and configuration versions. Report missing access, omitted results, and relevant existing automations. Include coverage even when there are zero recommendations. Do not call a partial review complete.
 
-Summarize the current workflow as:
-
-`trigger → person/steps → handoffs/decisions → completed outcome`
-
-Name the intended audience and distinguish required controls from habitual steps. Unknown business rules remain questions.
+Describe the trigger, person doing the work, steps, decisions, and completed outcome. Name who benefits. Distinguish required controls from habitual steps. Leave unknown business rules as questions.
 
 ## Card fields
 
-- **Candidate ID and title:** a short stable ID within the scan, such as `OPP-001`. Reuse it throughout selection, interview, specification, and evaluation; do not imply that it is a provider record ID. When resuming a prior scan, retain its supplied IDs rather than inventing replacements.
-- **Workflow and audience:** the job and the person who benefits.
-- **Problem:** the repeated work or avoidable delay and what supports that interpretation.
-- **Evidence:** source identifiers/links, dates when known, minimal excerpts, and whether each is observed, supplied fictional evidence, user-reported, or inferred. Preserve unresolved gaps.
-- **Existing coverage:** automation inspected, relevant behavior, configuration/runtime distinction, and unknown external coverage.
-- **Proposed improvement:** simplify/remove unnecessary work first, then state `trigger → steps → outcome` if automation is useful.
-- **Execution fit:** manually triggered action, deterministic automation, or asynchronous cloud routine; explain the fit and identify unverified runtime dependencies. This is a recommendation, not activation.
-- **Dependencies:** source reads, confirmed business rules, permissions, identifiers, and tools required. Do not assume all providers are needed.
-- **Priority rationale:** explain likely benefit, feasibility, and uncertainty with the evidence available. Do not manufacture numeric savings or a precise return on investment.
-- **Unresolved questions:** only the questions that change the proposal. Distinguish missing evidence from a choice the user needs to make.
+- **ID and title:** Use a short stable identifier such as `OPP-001`. Keep it through selection, interview, specification, and evaluation. It identifies a recommendation in the scan, not a provider record. Preserve supplied IDs when resuming.
+- **Workflow and audience:** State the job and who benefits.
+- **Problem:** Describe the repeated effort or delay. State what supports the claim.
+- **Evidence:** Include source identifiers or links, known dates, and minimal excerpts. Label observations, fictional sources, user reports, and inferences. Keep gaps visible.
+- **Existing coverage:** State what the inspected automations handle. Separate configuration from successful results. Mark unavailable external coverage unknown.
+- **Improvement:** Consider removing or simplifying work first. If automation is useful, describe its trigger, steps, and outcome.
+- **How it would run:** Recommend a manual action, an event-based automation, or a routine in the cloud. Explain the fit and unverified requirements. Nothing is activated.
+- **Dependencies:** Name required source access, confirmed rules, permissions, identifiers, and tools. Include only the providers needed.
+- **Priority:** Explain likely benefit, feasibility, and uncertainty. Do not invent savings or a return on investment.
+- **Open questions:** Include only questions that change the proposal. Separate missing evidence from choices the user must make.
 
-Recommend a small useful set, with one first choice when justified. Do not force a minimum number. One logical workflow should have one card even if many sources mention it or several improvements are possible. Put a saved-view alternative and an automation alternative inside that card; do not create a separate candidate merely to ask whether the workflow should exist. Keep unrelated projects separate.
+Recommend a small useful set. Give a first choice when justified. There is no minimum number of cards. Keep simplification and automation options for one workflow in one card. Keep unrelated projects separate.
 
-## Example: one workflow, several sources
+Unless discovery only was requested, invite the user to choose a card. Wait for their answer. Use [the conversation guide](conversation-guide.md) to continue.
 
-This example uses only the [fictional Acorn sources](discovery-examples.md#example-scope).
+## Example: one workflow across several sources
 
-**Coverage:** supplied fictional GitHub discussion and current acknowledgement workflow/log, Airtable schema excerpt, Slack request, and two of five email messages. No live connections. External automation coverage is incomplete. Maple Clinic is excluded.
+This uses the [fictional Acorn sources](discovery-examples.md#example-scope).
 
-**Current work:** Friday review request → Mira copies open cases and classification tags → Mira formats a summary and sends it to the support lead → lead receives the correct summary. The available sources do not prove delivery or define all relevant status meanings.
+**Coverage:** The supplied sources include a GitHub discussion, an acknowledgement workflow and run log, an Airtable table structure, a Slack request, and two of five email messages. No live sources were read. Other automation coverage is incomplete. Maple Clinic is excluded.
 
-**OPP-001 — Prepare the open-case summary**
+**Current work:** Mira copies open cases and their classification tags for the Friday review. She formats a summary and sends it to the support lead. The sources do not prove delivery or define every status.
 
-- **Audience/problem:** Mira repeatedly copies and formats cases for the Friday review, according to the SUP-42 discussion.
-- **Evidence:** [GitHub discussion](discovery-examples.md#github-reporting-discussion), [table structure](discovery-examples.md#airtable-case-structure), and [Slack request](discovery-examples.md#slack-report-request) share SUP-42. These are supplied fictional sources. Email coverage is partial; delivery is unknown.
-- **Existing coverage:** [case acknowledgements](discovery-examples.md#existing-acknowledgement-automation) cover new-case responses, not summary aggregation. Other automation coverage is unknown.
-- **Improvement:** request summary → read the selected cases using the user's confirmed inclusion rule → format a draft for review. Automatic delivery remains a separate choice.
-- **Execution fit:** start with a manual summary action so Mira can review its contents. A recurring cloud routine is an alternative if the user later wants a schedule and its connections can support the work.
-- **Dependencies:** selected table/fields, confirmed case inclusion and classification rules, and a supported read connection. No new Slack/email write is required for a draft-only option.
-- **Priority:** first candidate because repeated copy/format work is reported and the source structure appears available. Time savings and end-to-end feasibility are unmeasured.
-- **Questions:** which cases count as open, what fields and order must appear, and whether the output should remain a reviewed draft or be delivered automatically.
+**OPP-001: Prepare the open-case summary**
 
-This example does not propose duplicate acknowledgement work, count SUP-42's appearances as independent opportunities, or assume Maple Clinic belongs to Acorn Support.
+- **Audience and problem:** Mira reports repeated copying and formatting in SUP-42.
+- **Evidence:** The [discussion](discovery-examples.md#github-reporting-discussion), [table structure](discovery-examples.md#airtable-case-structure), and [Slack request](discovery-examples.md#slack-report-request) share SUP-42. These sources are fictional. Email coverage is partial. Delivery is unknown.
+- **Existing coverage:** [Case acknowledgements](discovery-examples.md#existing-acknowledgement-automation) handle new-case responses. They do not build the summary. Other coverage is unknown.
+- **Improvement:** First ask whether a saved view could replace the report. If a report is needed, a manual action could read the selected cases and prepare a draft. Use the user's confirmed inclusion rule.
+- **How it would run:** A manual action lets Mira review the draft. A recurring cloud routine is another option if the user chooses a schedule and suitable connections exist.
+- **Dependencies:** Resolve the table and fields. Confirm inclusion and classification rules. Confirm a supported reading connection. A draft requires no Slack or email write.
+- **Priority:** This is the first recommendation because repeated effort is reported and the data structure is supplied. Savings and complete feasibility are unmeasured.
+- **Open questions:** Confirm which cases count as open, the required fields and order, and whether the result stays a draft or is delivered.
+
+The acknowledgement workflow serves a different purpose. Maple Clinic belongs to a different project. Neither becomes another recommendation for this reporting job.

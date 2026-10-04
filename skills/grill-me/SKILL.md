@@ -1,46 +1,32 @@
 ---
 name: grill-me
-description: Stress-test a plan or design through a relentless, branch-by-branch interview until every load-bearing decision is resolved. Use when the user says "grill me", "interview me on this", "stress-test this plan", "find the holes", or wants someone to find the gaps before they commit. The point is to surface unanswered questions early so they get answered on a whiteboard, not in production.
+description: Ask a few questions about a workflow or plan before it is built. Use when the user asks to be interviewed, selects an automation opportunity, or wants important gaps resolved. Use known answers and evidence to keep the interview short. Ask more when the user requests a deeper review.
 ---
 
 # Grill Me
 
-Interview the user about every load-bearing decision in their plan or design until shared understanding is reached. The user wants the holes found — be useful by finding them.
+Help the user resolve the important choices in a workflow or plan.
 
-## How to run
+Read [the conversation guide](../../references/conversation-guide.md). Apply [the writing guide](../../references/writing-guide.md) to every response.
 
-Ask one question at a time. Wait for the answer before the next question. Don't dump a list.
+## Ask and respond
 
-For each question, provide your **recommended answer** alongside the question — not as the final word, but as a Schelling point that makes "yes/no/different" cheap to answer. A bare question costs the user thinking time; a question + recommendation costs them a reaction.
+- Start from the selected recommendation and earlier answers. Read supplied evidence before asking factual questions.
+- Ask one question at a time. Wait for the answer.
+- Usually ask two to four questions about important unanswered decisions. Do not ask a fixed number in each topic.
+- Offer a recommended answer when the evidence supports one. Label it as a suggestion until the user chooses it.
+- Use each answer to update the proposal. Replace earlier answers when corrected.
+- Mark an unknown answer as unknown. Keep required choices visible.
+- Ask an extra question only when a missing choice prevents an accurate specification. Explain why it matters.
 
-If a question can be answered by reading the codebase, read the codebase instead of asking.
+Consider the problem, approach, required tools, scope, likely failures, and success. These are topics to check against what is already known. They are not a required questionnaire.
 
-## Branches to walk
+If the user asks to “go deeper” or stress-test the full plan, explore the relevant topics in more detail. Continue to ask one question at a time. Stop when the important choices are clear or the user is done.
 
-Walk these branches in order. Inside each branch, ask 3-5 probing questions before moving on. Skip a branch only if the plan genuinely has nothing in it (e.g., a refactor has no new users).
+## Finish or pause
 
-1. **Problem.** What's the actual problem? Who has it? How do you know? What's the cost of not solving it? What happens if we wait six months?
-2. **Approach.** Why this approach over the obvious alternatives? What did you rule out and why? What's the simplest version that could work?
-3. **Architecture.** Where does this live? What does it depend on? What depends on it? Where are the seams? What's the rollback?
-4. **Scope.** What's in / out / explicitly deferred? What's the smallest shippable slice? What's the biggest thing that could expand scope mid-build?
-5. **Risk.** What's the most likely way this breaks? What's the worst case? What signals would tell you it's going wrong before it does?
-6. **Success.** How will you know it worked? What metric / behavior / outcome? When do you check?
+For a selected automation opportunity, preserve its ID, evidence, existing coverage, and confirmed rules. Read [the specification format](../../references/handoff-format.md) to write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include its outcome checks.
 
-## When to stop
+If the user pauses or stops, return the selected workflow, confirmed decisions, unresolved choices, current topic, and next question with a suggestion if available. Resume from that point. An unresolved choice stays unresolved.
 
-Stop when:
-- The user signals they're done, OR
-- Every branch has been walked and recommended answers are committed, OR
-- A blocking ambiguity has surfaced that needs offline resolution (name it, log it, stop).
-
-Don't keep grinding past clarity. The point is to surface what was missing, not to fill the conversation.
-
-## Find Automatable Workflows handoff
-
-When invoked from Find Automatable Workflows, begin with the selected candidate, its evidence, workflow map, existing automation coverage, confirmed answers, and unresolved questions. Read the bundled [handoff format](../../references/handoff-format.md) when recording decisions. Check supplied evidence before asking a question the sources can answer. Never ask the user to repeat an answer already in the handoff; probe the remaining load-bearing decisions.
-
-Record each answer as a confirmed decision, user report, or unresolved choice as appropriate. A recommended answer remains a proposal until the user selects it. Do not widen business rules or infer authorization to build, deploy, or send anything.
-
-When the user stops or an offline blocker appears, return the candidate ID, known decisions, remaining questions, current branch, and next question with its recommended answer. Resume from that summary rather than restarting the interview.
-
-When clarity is reached, produce the specification using the handoff format and read the bundled [Eval Creation skill](../eval-creation/SKILL.md) to attach outcome checks. Read the bundled skill even if another installed skill has the same name.
+Choosing an option does not authorize building, deploying, changing records, or sending messages. The user defines business rules and the proposed automation's stop and retry behavior.
