@@ -54,6 +54,8 @@ You can also use the interview and evaluation skills directly:
 
 See the [fictional sources](references/discovery-examples.md), [recommendation example](references/opportunity-format.md), and [specification example](references/handoff-format.md). These examples contain no client data. They do not prove live connections work.
 
+The [fictional workflow case study](docs/fictional-workflow-case-study.md) follows one reported pain point through the interview, proposed checks, and unresolved decisions. It describes no deployed automation or measured time savings.
+
 ## Connections
 
 Choose the repositories, bases, conversations, or email threads to review. Give an activity window for a connected scan. The plugin asks for missing search limits before reading sources.
@@ -86,8 +88,8 @@ Markdown is plain text with formatting marks, such as `#` for a heading. Ask to 
 
 ## Sources and attribution
 
-This public repository contains the complete plugin. It adapts the user's supplied `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills. The interview has been shortened for this plugin. The text follows the supplied `voice-align` writing rules. The explanation follows the supplied `auto` format.
+This public repository contains the complete plugin. I adapted my `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills and shortened the interview for this plugin. I used local `voice-align` writing rules and the `auto` explanation format while editing.
 
-Those local documentation skills are not required to use the plugin. Their private logging settings are not included. Eval Creation retains its [Hamel Husain references](skills/eval-creation/references/hamel-husain-evaluation-practices.md).
+Those local writing guides are not required to use the plugin or included as runtime dependencies. Their private logging settings are not included. Eval Creation retains its [Hamel Husain references](skills/eval-creation/references/hamel-husain-evaluation-practices.md), which credit the outside work that informed its evaluation method.
 
-This repository has an MIT license for Rachael Quisel's original contributions. The supplied source skills did not declare redistribution licenses when adapted, and permission for those adaptations has not yet been confirmed. Do not assume the MIT license grants rights to material owned by someone else. Claude Directory publication remains unverified.
+I own the three source skills named above. The adaptations and my other original material in this repository are released under the [MIT license](LICENSE). The linked works by Hamel Husain retain their own rights; this license does not grant rights to those external sources. Claude Directory publication remains unverified.

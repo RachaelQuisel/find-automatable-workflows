@@ -4,7 +4,7 @@ The historical baseline was verified on October 3, 2026. It used version 0.1.0 i
 
 ## Repository and scope
 
-The user originally requested a private repository for [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). The repository is now public. It is the current source, and the plugin is packaged at its root.
+The user originally requested a private repository for [RachaelQuisel/find-automatable-workflows](https://github.com/RachaelQuisel/find-automatable-workflows). The repository is now public. It is the current source, and the plugin is packaged at its root. On October 4, 2026, Rachael confirmed that she owns the three source skills adapted here. Their adaptations are included in this repository's MIT release.
 
 The user selected Claude first, recommendations and specifications, manual scans, and GitHub as the initial source. The exact repository for a live scan remains pending. No live account content was scanned during plugin tests.
 
@@ -119,7 +119,6 @@ Raw traces remain outside this package in the original planning workspace under 
 
 ## Remaining review
 
-- Confirm ownership or redistribution permission for the three adapted source skills before describing their reuse rights as settled.
 - User review of the fictional specification's usefulness remains pending.
 - The exact live GitHub scan scope remains pending. No live workflow source was reviewed for these tests.
 - Cowork and claude.ai installation remain unverified. Live connections, live denial behavior, permanent installation, and Claude Directory publication remain unverified. The GitHub source repository is public.
