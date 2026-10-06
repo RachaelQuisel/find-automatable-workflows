@@ -2,7 +2,7 @@
 
 <img src="assets/find-automatable-workflows.png" alt="Find Automatable Workflows icon" width="160">
 
-Find repetitive work that could be simpler. This plugin asks a few questions about your work. It can also review selected GitHub repositories, Airtable bases, Slack conversations, or email threads when you request a scan.
+Find repetitive work that could be simpler. This plugin asks a few questions about your work. It is designed to review selected GitHub repositories, Airtable bases, Slack conversations, or email threads when you request a scan and the host provides access. Those live connections have not yet been verified for this plugin.
 
 Choose a recommendation to discuss. The plugin uses your answers to write a specification for building the automation. It includes checks for deciding whether the result meets your needs.
 
