@@ -4,7 +4,7 @@ This is a fictional example of how Find Automatable Workflows moves from a repor
 
 ## Starting point
 
-Lena says she exports active orders each week and copies their details into a report. That statement identifies repeated work, but it does not establish how many orders exist, how long the task takes, or whether another automation already covers it. No live source was connected for this example.
+Lena says she exports order data each week and copies the details into a report. That statement identifies repeated work, but it does not establish how many orders exist, how long the task takes, or whether another automation already covers it. She confirmed the `Active` status rule later in the fictional interview. No live source was connected for this example.
 
 ## Decisions made during the interview
 
@@ -16,7 +16,7 @@ The proposal keeps the live table and field mappings, sort type, date format, ex
 
 The proposed checks compare the draft against a source snapshot: include exactly the qualifying orders, preserve each displayed value, sort as agreed, name missing data, handle an empty result, and confirm that no extra action occurred. A person still needs to judge whether the draft is useful.
 
-The [verification record](verification.md) describes restricted Claude Code sessions using fictional inputs. The current version asked a short sequence of questions, accepted a corrected status rule, resumed after a pause, and produced a specification with outcome checks. These checks establish observed behavior in those sessions. They do not establish live GitHub, Airtable, Slack, or email access, construction, deployment, or time saved.
+This OPP-007 handoff is an earlier fictional example. The [verification record](verification.md) describes separate restricted tests of version 0.1.1 that produced an OPP-001 proposal, accepted a corrected status rule, resumed after a pause, and wrote a specification with outcome checks. Those tests show behavior in their own scenario; they did not rerun Lena's handoff or establish live GitHub, Airtable, Slack, or email access, construction, deployment, or time saved.
 
 ## Result
 
