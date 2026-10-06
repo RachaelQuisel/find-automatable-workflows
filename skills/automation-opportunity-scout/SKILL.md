@@ -1,6 +1,6 @@
 ---
 name: automation-opportunity-scout
-description: Ask a few questions to find work worth automating. Use a description or a manually requested review of selected GitHub, Airtable, Slack, or email sources. Help the user choose a recommendation and prepare a specification with outcome checks. Use for workflow discovery, not ordinary record lookups or executing an existing automation.
+description: 'Find work worth automating. Use when someone asks "what could I automate", "where am I wasting time", "where am I losing time", "find automation opportunities", or asks to audit GitHub, Airtable, Slack, or email for repetitive work. Ask a few questions. Use a description or a requested review of selected sources. Help choose a recommendation and prepare a specification with outcome checks. Use for workflow discovery, not ordinary record lookups or executing an existing automation.'
 ---
 
 # Automation Opportunity Scout
@@ -29,11 +29,11 @@ A proposed automation may start manually, follow a fixed event, or run as a rout
 
 ## Respond to the user's choice
 
-Unless the user requested discovery only, invite them to select a recommendation. Wait for their choice. Then read the bundled [Grill Me skill](../grill-me/SKILL.md). Carry forward the recommendation's ID, evidence, existing coverage, and known answers.
+Unless the user requested discovery only, invite them to select a recommendation. Wait for their choice. Then read the bundled [Grill Me Workflow skill](../grill-me-workflow/SKILL.md). If Grill Me Workflow is not available, ask two to four questions using the conversation guide. Carry forward the recommendation's ID, evidence, existing coverage, and known answers.
 
 Ask a few important questions about the selected workflow. Do not restart discovery or ask for known facts. Use each answer to refine the proposal. Honor corrections, unknown answers, pauses, and stops through the conversation guide.
 
-When enough is known, read [the specification format](references/handoff-format.md). Write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include outcome checks. Mark any decision or source mapping still needed before construction.
+When enough is known, read [the specification format](references/handoff-format.md). Write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include outcome checks. If Eval Creation is not available, write those checks from the known goal and confirmed rules. Mark any decision or source mapping still needed before construction.
 
 ## Actions and storage
 

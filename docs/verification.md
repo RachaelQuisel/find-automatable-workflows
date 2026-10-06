@@ -18,7 +18,7 @@ Root manifest validation passed without errors or warnings. Internal document an
 
 - `claude plugin validate plugins/automation-scout --strict --json` passed without errors or warnings.
 - All three skills passed the Skill Creator validator. An existing uv environment provided PyYAML when system Python lacked it.
-- At this stage, Grill Me and Eval Creation retained their original bodies. Unsupported `tags` metadata was removed. Routing notes were added. Version 0.1.1 later shortened the interview and rewrote the text.
+- At this stage, Grill Me (now `grill-me-workflow`) and Eval Creation retained their original bodies. Unsupported `tags` metadata was removed. Routing notes were added. Version 0.1.1 later shortened the interview and rewrote the text.
 - The supplied skills declared no redistribution license. No license was inferred.
 - Claude registered all three `automation-scout` skills and read their entry files.
 - A fresh temporary-directory copy loaded with `--plugin-dir`. Discovery ran successfully. This proved loading for one Claude Code session. It did not prove permanent installation or support in another host.
@@ -97,7 +97,7 @@ The trace remains in the planning workspace as `docs/evidence/automation-scout/c
 
 ## Version 0.1.1 changes
 
-The user requested a few interactive questions and plain English throughout the plugin. The scout now uses a short intake. Grill Me asks a few important unresolved questions instead of a fixed count per topic.
+The user requested a few interactive questions and plain English throughout the plugin. The scout now uses a short intake. Grill Me Workflow asks a few important unresolved questions instead of a fixed count per topic.
 
 The conversation guide covers answers, corrections, unknowns, selection, discovery only, and resumption. The shared writing guide applies to all three skills. [How it works](how-it-works.md) uses the requested Trigger, Inputs, What happens, and Outputs format.
 

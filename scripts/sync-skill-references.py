@@ -7,8 +7,9 @@ keeps an identical copy of every shared guide it reaches, including guides
 linked from those files. The skill folder then still resolves those links
 when it is copied on its own.
 
-Links from one skill to a sibling skill, such as ``../grill-me/SKILL.md``,
-are not copied.
+Links from one skill to a sibling skill, such as ``../grill-me-workflow/SKILL.md``,
+are not copied. GitHub Actions runs this script with ``--check`` on pull
+requests. See ``.github/workflows/check-shared-guides.yml``.
 
 Edit a file under ``references/``, then run::
 

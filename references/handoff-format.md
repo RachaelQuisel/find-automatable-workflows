@@ -4,7 +4,7 @@ Use this when a user selects a recommendation or when writing its specification 
 
 ## Interview and resumption
 
-Follow [the conversation guide](conversation-guide.md) and the bundled Grill Me skill. Carry forward the ID, title, goal, audience, source limits, evidence, existing automation coverage, confirmed answers, and open questions.
+Follow [the conversation guide](conversation-guide.md). Use the bundled Grill Me Workflow skill when it is available. Carry forward the ID, title, goal, audience, source limits, evidence, existing automation coverage, confirmed answers, and open questions.
 
 A suggested answer stays proposed until the user chooses it. Ask only important unanswered questions. The default interview is short. It does not require a question count for each topic.
 

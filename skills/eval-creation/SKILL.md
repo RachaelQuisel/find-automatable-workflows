@@ -1,6 +1,6 @@
 ---
 name: eval-creation
-description: Write short checks for deciding whether a process meets its goal. Use when the user asks for an evaluation, success criteria, stop conditions, retry limits, or a definition of done. Base checks on real examples and confirmed rules.
+description: 'Write short pass or fail checks for whether a business process or automation meets its goal. Use for outcome checks, success criteria, stop conditions, retry limits, or a definition of done for that process or automation. Base the checks on real examples and confirmed rules. Do not use this for a vendor comparison, an employee performance review, or a model evaluation.'
 ---
 
 # Evaluation Creation
@@ -39,7 +39,7 @@ If real examples are unavailable, say so. Use the stated goal, known rules, and 
 4. **What success looks like:** State the exact required result.
 5. **When the work is done:** Require every success check to pass. Require the result to match the authoritative source.
 6. **When to stop:** State the problems that require an immediate stop.
-7. **What to do after a failed run:** Require the cause to be understood and corrected before another attempt. Allow no more than ten complete evaluation attempts. After a tenth failure, report the failure, completed work, remaining work, and help needed.
+7. **What to do after a failed run:** Require the cause to be understood and corrected before another attempt. Allow no more than ten complete evaluation attempts. Past ten full runs, repeated retries usually hide a design problem. After a tenth failure, report the failure, completed work, remaining work, and help needed.
 8. **Final result:** Report the result, run number, completed work, unfinished work, problems, first failed step, and reason for stopping.
 
 ## Count attempts correctly
@@ -89,12 +89,4 @@ First failed step: [The step, or None.]
 Reason for stopping: [The reason.]
 ```
 
-## Find Automatable Workflows
-
-Read the selected workflow and specification from the conversation or supplied [handoff format](references/handoff-format.md). Preserve the goal, rules, evidence, existing coverage, and unanswered questions.
-
-The plugin proposes checks. It does not run the proposed automation. Without actual run evidence, use Needs review and Not run. Writing or reviewing a proposed evaluation is not an execution attempt. Missing evidence is not an observed failure.
-
-The ten-attempt limit applies to evaluation. It does not set operational retries for the proposed automation. The user defines that automation's stop and retry behavior. Keep an unknown policy unresolved.
-
-Deliver the specification and eight-section evaluation together. Recommendation usefulness and business rules require user judgment. Complete fields or an accepted tool request alone do not prove the business result.
+When a selected automation opportunity or its specification is already in the conversation, read [the automation handoff](references/automation-handoff.md) before writing the checks.

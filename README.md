@@ -47,7 +47,7 @@ The plugin runs discovery only when you ask. A recommendation may describe a man
 You can also use the interview and evaluation skills directly:
 
 ```text
-/find-automatable-workflows:grill-me Ask me a few questions about OPP-001 using what we already discussed.
+/find-automatable-workflows:grill-me-workflow Ask me a few questions about OPP-001 using what we already discussed.
 
 /find-automatable-workflows:eval-creation Write outcome checks for the specification in this conversation.
 ```
@@ -90,20 +90,22 @@ Markdown is plain text with formatting marks, such as `#` for a heading. Ask to 
 
 Edit the guides in `references/`. Each skill that reads a guide keeps an identical file in its own folder, and it reads that file. The link still resolves when the skill folder is copied on its own.
 
-After you edit a guide, update the skill copies and check them:
+From the repository root, copy those guides into the skills, then check that every copy still matches:
 
 ```bash
 python3 scripts/sync-skill-references.py
 python3 scripts/sync-skill-references.py --check
 ```
 
-The check fails when a skill copy does not match the guide in `references/`.
+Run the check on its own when you only want to know whether the copies drifted. It changes nothing. It fails when a skill copy is missing, differs from `references/`, or is no longer reached by that skill's links.
 
-Links from one skill to another, such as Grill Me or Eval Creation, stay as sibling links. They resolve when this plugin is installed. A single copied skill folder does not include the other skills.
+The same check runs in GitHub Actions on every pull request and push. The workflow is [`.github/workflows/check-shared-guides.yml`](.github/workflows/check-shared-guides.yml). It uses the Python already on the runner. No extra install is required.
+
+Links from one skill to another, such as Grill Me Workflow or Eval Creation, stay as sibling links. They resolve when this plugin is installed. A single copied skill folder does not include the other skills. If that other skill is missing, the skill text says how to continue with the guides in its own folder.
 
 ## Sources and attribution
 
-This public repository contains the complete plugin. I adapted my `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills and shortened the interview for this plugin. I used local `voice-align` writing rules and the `auto` explanation format while editing.
+This public repository contains the complete plugin. I adapted my `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills and shortened the interview for this plugin. This plugin's interview skill is `grill-me-workflow`. It does not use the name of the separate `grill-me` skill. I used local `voice-align` writing rules and the `auto` explanation format while editing.
 
 Those local writing guides are not required to use the plugin or included as runtime dependencies. Their private logging settings are not included. Eval Creation retains its [Hamel Husain references](skills/eval-creation/references/hamel-husain-evaluation-practices.md), which credit the outside work that informed its evaluation method.
 

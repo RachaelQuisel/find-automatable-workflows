@@ -30,7 +30,7 @@ When the user says “I do not know,” mark the answer unknown. Use a reasonabl
 
 Present supported recommendations once the task and source limits are clear. Invite the user to choose one workflow. Keep its ID, evidence, existing automation coverage, and known answers.
 
-For a selected workflow, use the bundled Grill Me skill. Ask about two to four important unanswered decisions. Common topics are the trigger, included work, output destination, required review, and exceptions. Skip topics already settled. Ask fewer questions when enough is known.
+For a selected workflow, use the bundled Grill Me Workflow skill when it is available. If it is not available, ask the questions in this guide. Ask about two to four important unanswered decisions. Common topics are the trigger, included work, output destination, required review, and exceptions. Skip topics already settled. Ask fewer questions when enough is known.
 
 Ask more only when an unresolved choice prevents an accurate specification or the user requests a deeper interview. Explain why a further question is needed. Do not require a fixed number of questions in each topic.
 
