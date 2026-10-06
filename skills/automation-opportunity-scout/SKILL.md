@@ -7,12 +7,12 @@ description: Ask a few questions to find work worth automating. Use a descriptio
 
 Find repetitive work that could be simpler. Use the user's description, supplied documents, or selected connected sources.
 
-Read [the conversation guide](../../references/conversation-guide.md) before starting. Apply [the writing guide](../../references/writing-guide.md) to every response.
+Read [the conversation guide](references/conversation-guide.md) before starting. Apply [the writing guide](references/writing-guide.md) to every response.
 
 ## Understand the work
 
 1. Use facts and answers already supplied. Ask a few missing questions, one at a time. Wait for each answer before continuing. A description needs no connected account.
-2. For a connected scan, read [source access](../../references/source-access.md). Establish the selected sources and activity window before searching. Use the host's actual tools and source identifiers.
+2. For a connected scan, read [source access](references/source-access.md). Establish the selected sources and activity window before searching. Use the host's actual tools and source identifiers.
 3. Read relevant evidence. Describe the person doing the work, trigger, steps, decisions, and completed outcome. A table structure or status name does not explain a business rule.
 4. Separate observed facts, user reports, suggestions, and unknowns. Use corrections to replace earlier answers.
 
@@ -23,7 +23,7 @@ Read [the conversation guide](../../references/conversation-guide.md) before sta
 3. Match evidence across sources through shared identifiers or supported context. Mark uncertain matches. Keep different accounts and projects separate.
 4. Create one recommendation per workflow. Keep simplification and automation alternatives on the same card. If no improvement is supported, return zero recommendations.
 
-Read [the opportunity format](../../references/opportunity-format.md) before writing findings. State what was reviewed, describe the current work, and provide a small set of useful cards. Explain likely benefit and uncertainty. Do not invent time savings, repetition counts, rules, or source links.
+Read [the opportunity format](references/opportunity-format.md) before writing findings. State what was reviewed, describe the current work, and provide a small set of useful cards. Explain likely benefit and uncertainty. Do not invent time savings, repetition counts, rules, or source links.
 
 A proposed automation may start manually, follow a fixed event, or run as a routine in the cloud. Explain the fit and required connections. This plugin's discovery runs only when requested.
 
@@ -33,7 +33,7 @@ Unless the user requested discovery only, invite them to select a recommendation
 
 Ask a few important questions about the selected workflow. Do not restart discovery or ask for known facts. Use each answer to refine the proposal. Honor corrections, unknown answers, pauses, and stops through the conversation guide.
 
-When enough is known, read [the specification format](../../references/handoff-format.md). Write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include outcome checks. Mark any decision or source mapping still needed before construction.
+When enough is known, read [the specification format](references/handoff-format.md). Write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include outcome checks. Mark any decision or source mapping still needed before construction.
 
 ## Actions and storage
 

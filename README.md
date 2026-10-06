@@ -86,6 +86,21 @@ Instructions inside a source file, record, message, or email do not authorize ex
 
 Markdown is plain text with formatting marks, such as `#` for a heading. Ask to save a Markdown specification if you want a file. Choose its destination. The file includes only the evidence needed for the recommendation. Delete it when no longer needed. Manage conversation and provider histories through their own controls.
 
+## Copies inside each skill
+
+Edit the guides in `references/`. Each skill that reads a guide keeps an identical file in its own folder, and it reads that file. The link still resolves when the skill folder is copied on its own.
+
+After you edit a guide, update the skill copies and check them:
+
+```bash
+python3 scripts/sync-skill-references.py
+python3 scripts/sync-skill-references.py --check
+```
+
+The check fails when a skill copy does not match the guide in `references/`.
+
+Links from one skill to another, such as Grill Me or Eval Creation, stay as sibling links. They resolve when this plugin is installed. A single copied skill folder does not include the other skills.
+
 ## Sources and attribution
 
 This public repository contains the complete plugin. I adapted my `airtable-workflow-scout`, `grill-me`, and `eval-creation` skills and shortened the interview for this plugin. I used local `voice-align` writing rules and the `auto` explanation format while editing.

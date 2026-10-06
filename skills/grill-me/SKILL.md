@@ -7,7 +7,7 @@ description: Ask a few questions about a workflow or plan before it is built. Us
 
 Help the user resolve the important choices in a workflow or plan.
 
-Read [the conversation guide](../../references/conversation-guide.md). Apply [the writing guide](../../references/writing-guide.md) to every response.
+Read [the conversation guide](references/conversation-guide.md). Apply [the writing guide](references/writing-guide.md) to every response.
 
 ## Ask and respond
 
@@ -25,7 +25,7 @@ If the user asks to “go deeper” or stress-test the full plan, explore the re
 
 ## Finish or pause
 
-For a selected automation opportunity, preserve its ID, evidence, existing coverage, and confirmed rules. Read [the specification format](../../references/handoff-format.md) to write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include its outcome checks.
+For a selected automation opportunity, preserve its ID, evidence, existing coverage, and confirmed rules. Read [the specification format](references/handoff-format.md) to write the specification. Read the bundled [Eval Creation skill](../eval-creation/SKILL.md) and include its outcome checks.
 
 If the user pauses or stops, return the selected workflow, confirmed decisions, unresolved choices, current topic, and next question with a suggestion if available. Resume from that point. An unresolved choice stays unresolved.
 

@@ -5,7 +5,7 @@ description: Write short checks for deciding whether a process meets its goal. U
 
 # Evaluation Creation
 
-Write checks that someone unfamiliar with the process can use. Apply [the writing guide](../../references/writing-guide.md) to every response.
+Write checks that someone unfamiliar with the process can use. Apply [the writing guide](references/writing-guide.md) to every response.
 
 Follow Hamel Husain's method. Inspect real work. Find problems that matter to users. Create focused checks for those problems.
 
@@ -91,7 +91,7 @@ Reason for stopping: [The reason.]
 
 ## Find Automatable Workflows
 
-Read the selected workflow and specification from the conversation or supplied [handoff format](../../references/handoff-format.md). Preserve the goal, rules, evidence, existing coverage, and unanswered questions.
+Read the selected workflow and specification from the conversation or supplied [handoff format](references/handoff-format.md). Preserve the goal, rules, evidence, existing coverage, and unanswered questions.
 
 The plugin proposes checks. It does not run the proposed automation. Without actual run evidence, use Needs review and Not run. Writing or reviewing a proposed evaluation is not an execution attempt. Missing evidence is not an observed failure.
 
