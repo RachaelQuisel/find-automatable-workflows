@@ -1,9 +1,23 @@
 ---
 name: grill-me-workflow
+version: 1.0.4
 description: 'Ask two to four questions about a selected workflow or automation before it is built. Use when someone says "interview me about this workflow", "grill me on this workflow", "poke holes in this automation", "stress-test this workflow before we build it", or selects an automation opportunity. Use known answers and keep the interview short. Not a deep review of a pricing plan or any plan outside a workflow.'
 ---
 
 # Grill Me Workflow
+
+## Purpose in plain English
+
+This skill helps you clarify a proposed automation through focused questions before work begins.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 Help the user resolve the important choices in a workflow before it is built.
 

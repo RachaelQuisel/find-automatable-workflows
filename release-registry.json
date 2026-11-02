@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "repository": "RachaelQuisel/find-automatable-workflows",
+  "packages": [
+    {
+      "name": "find-automatable-workflows",
+      "root": ".",
+      "version": "1.0.4",
+      "manifests": [
+        "plugin.json",
+        ".claude-plugin/plugin.json",
+        ".codex-plugin/plugin.json"
+      ],
+      "skills": [
+        "skills/automation-opportunity-scout/SKILL.md",
+        "skills/eval-creation/SKILL.md",
+        "skills/grill-me-workflow/SKILL.md"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "path": "skills/automation-opportunity-scout/SKILL.md",
+      "version": "1.0.4",
+      "sha256": "59c055edf0cfc89258d05921df4da00978c3e498771128878789fd7262dd53e2",
+      "source": "skills/automation-opportunity-scout/SKILL.md",
+      "guide": "skills/automation-opportunity-scout/README.md"
+    },
+    {
+      "path": "skills/eval-creation/SKILL.md",
+      "version": "1.0.4",
+      "sha256": "b1b5d8d031569b4589c6cf3b7a23b7d36f873ac8febebcbf1e9b033240be5021",
+      "source": "skills/eval-creation/SKILL.md",
+      "guide": "skills/eval-creation/README.md"
+    },
+    {
+      "path": "skills/grill-me-workflow/SKILL.md",
+      "version": "1.0.4",
+      "sha256": "4b6eb46dd3ea18483f8725f8df1e84bae566db073f96b636371118d7ffc6b572",
+      "source": "skills/grill-me-workflow/SKILL.md",
+      "guide": "skills/grill-me-workflow/README.md"
+    }
+  ],
+  "copies": []
+}

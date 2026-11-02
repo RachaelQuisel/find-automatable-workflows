@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "name": "Rachael Quisel"
+  },
+  "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "category": "Productivity",
+        "composerIcon": "./assets/find-automatable-workflows.png",
+        "developerName": "Rachael Quisel",
+        "displayName": "Find Automatable Workflows",
+        "logo": "./assets/find-automatable-workflows.png",
+        "longDescription": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
+        "shortDescription": "Find work worth automating"
+      }
+    }
+  },
+  "homepage": "https://github.com/RachaelQuisel/find-automatable-workflows",
+  "keywords": [
+    "automation",
+    "workflow",
+    "discovery",
+    "requirements",
+    "evaluation"
+  ],
+  "license": "MIT",
+  "name": "find-automatable-workflows",
+  "repository": "https://github.com/RachaelQuisel/find-automatable-workflows",
+  "version": "1.0.4"
+}

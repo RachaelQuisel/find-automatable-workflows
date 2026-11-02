@@ -1,9 +1,23 @@
 ---
 name: eval-creation
+version: 1.0.4
 description: 'Write short pass or fail checks for whether a business process or automation meets its goal. Use for outcome checks, success criteria, stop conditions, retry limits, or a definition of done for that process or automation. Base the checks on real examples and confirmed rules. Do not use this for a vendor comparison, an employee performance review, or a model evaluation.'
 ---
 
 # Evaluation Creation
+
+## Purpose in plain English
+
+This skill helps you write clear pass-or-fail checks for whether a process or automation achieves its goal.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 Write checks that someone unfamiliar with the process can use. Apply [the writing guide](references/writing-guide.md) to every response.
 

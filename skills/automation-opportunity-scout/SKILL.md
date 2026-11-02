@@ -1,9 +1,23 @@
 ---
 name: automation-opportunity-scout
+version: 1.0.4
 description: 'Find work worth automating. Use when someone asks "what could I automate", "where am I wasting time", "where am I losing time", "find automation opportunities", or asks to audit GitHub, Airtable, Slack, or email for repetitive work. Ask a few questions. Use a description or a requested review of selected sources. Help choose a recommendation and prepare a specification with outcome checks. Use for workflow discovery, not ordinary record lookups or executing an existing automation.'
 ---
 
 # Automation Opportunity Scout
+
+## Purpose in plain English
+
+This skill helps you find repetitive work worth automating and explain the value of the best opportunities.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 Find repetitive work that could be simpler. Use the user's description, supplied documents, or selected connected sources.
 

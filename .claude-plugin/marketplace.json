@@ -11,7 +11,8 @@
       "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
       "source": "./",
       "category": "productivity",
-      "homepage": "https://github.com/RachaelQuisel/find-automatable-workflows"
+      "homepage": "https://github.com/RachaelQuisel/find-automatable-workflows",
+      "version": "1.0.4"
     }
   ]
 }
