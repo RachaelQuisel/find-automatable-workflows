@@ -1,6 +1,6 @@
 ---
 name: automation-opportunity-scout
-version: 1.0.4
+version: 1.0.5
 description: 'Find work worth automating. Use when someone asks "what could I automate", "where am I wasting time", "where am I losing time", "find automation opportunities", or asks to audit GitHub, Airtable, Slack, or email for repetitive work. Ask a few questions. Use a description or a requested review of selected sources. Help choose a recommendation and prepare a specification with outcome checks. Use for workflow discovery, not ordinary record lookups or executing an existing automation.'
 ---
 

@@ -5,7 +5,7 @@
     {
       "name": "find-automatable-workflows",
       "root": ".",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "manifests": [
         "plugin.json",
         ".claude-plugin/plugin.json",
@@ -21,22 +21,22 @@
   "skills": [
     {
       "path": "skills/automation-opportunity-scout/SKILL.md",
-      "version": "1.0.4",
-      "sha256": "59c055edf0cfc89258d05921df4da00978c3e498771128878789fd7262dd53e2",
+      "version": "1.0.5",
+      "sha256": "1f11d7005df37a4a0f7bec4a6cba414e5dd4f4c4a4c6bf42c5b91d538aa5a47a",
       "source": "skills/automation-opportunity-scout/SKILL.md",
       "guide": "skills/automation-opportunity-scout/README.md"
     },
     {
       "path": "skills/eval-creation/SKILL.md",
-      "version": "1.0.4",
-      "sha256": "b1b5d8d031569b4589c6cf3b7a23b7d36f873ac8febebcbf1e9b033240be5021",
+      "version": "1.0.5",
+      "sha256": "cc3e7c0e576336dc423b5806a845214a2cbda68bf486be2765ee896687fde3ac",
       "source": "skills/eval-creation/SKILL.md",
       "guide": "skills/eval-creation/README.md"
     },
     {
       "path": "skills/grill-me-workflow/SKILL.md",
-      "version": "1.0.4",
-      "sha256": "4b6eb46dd3ea18483f8725f8df1e84bae566db073f96b636371118d7ffc6b572",
+      "version": "1.0.5",
+      "sha256": "1ea3de1aa73333143b72e44337582265ec33c78041a1bd75992385f353c56865",
       "source": "skills/grill-me-workflow/SKILL.md",
       "guide": "skills/grill-me-workflow/README.md"
     }

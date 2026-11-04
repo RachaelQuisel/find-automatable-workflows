@@ -1,6 +1,6 @@
 ---
 name: eval-creation
-version: 1.0.4
+version: 1.0.5
 description: 'Write short pass or fail checks for whether a business process or automation meets its goal. Use for outcome checks, success criteria, stop conditions, retry limits, or a definition of done for that process or automation. Base the checks on real examples and confirmed rules. Do not use this for a vendor comparison, an employee performance review, or a model evaluation.'
 ---
 

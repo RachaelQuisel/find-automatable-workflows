@@ -2,7 +2,7 @@
   "name": "find-automatable-workflows",
   "displayName": "Find Automatable Workflows",
   "description": "Ask a few questions to find work worth automating. Review selected sources and turn a chosen recommendation into a specification with outcome checks.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Rachael Quisel"
   },

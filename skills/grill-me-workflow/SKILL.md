@@ -1,6 +1,6 @@
 ---
 name: grill-me-workflow
-version: 1.0.4
+version: 1.0.5
 description: 'Ask two to four questions about a selected workflow or automation before it is built. Use when someone says "interview me about this workflow", "grill me on this workflow", "poke holes in this automation", "stress-test this workflow before we build it", or selects an automation opportunity. Use known answers and keep the interview short. Not a deep review of a pricing plan or any plan outside a workflow.'
 ---
 
